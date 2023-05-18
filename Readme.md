@@ -34,6 +34,8 @@ The following files within the template folder of this module are used by Plaste
 - Use PowerShell to run the ``New-SADScriptoFormProject`` function and create a new ScriptoForm project.  Provide appropriate parameters to the function as required for your project.  For specific instructions use: ``Get-Help New-SADScriptoFormProject -Full``
 - Customize the new project files that were created from the deployment using the customization guidelines below.
 
+https://github.com/Smart-Ace-Designs/SmartAceDesigns.ScriptoFormTemplates/assets/132539186/21b636b0-9b66-4013-87ee-22988cde02c5
+
 ## Customization Guidelines
 Follow these guidelines to customize the files in the new ScriptoForm project folder after deployment:
 - [Script File] Add general notes to the top comments section.
