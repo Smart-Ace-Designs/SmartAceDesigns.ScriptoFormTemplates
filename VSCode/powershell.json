@@ -1,0 +1,495 @@
+{
+    "Controls: CheckBox":
+    {
+        "prefix": "Controls: CheckBox",
+        "description": "Instantiate a CheckBox control",
+        "body":
+        [
+            "\\$CheckBox${1:Name} = New-Object -TypeName System.Windows.Forms.CheckBox$0"
+        ]
+    },
+
+    "Controls: ErrorProvider":
+    {
+        "prefix": "Controls: ErrorProvider",
+        "description": "Instantiate an ErrorProvider control",
+        "body":
+        [
+            "\\$ErrorProviderMain = New-Object -TypeName System.Windows.Forms.ErrorProvider$0"
+        ]
+    },
+
+    "Controls: Label & ComboBox":
+    {
+        "prefix": "Controls: Label & ComboBox",
+        "description": "Instantiate a Label and ComboBox control pair",
+        "body":
+        [
+            "\\$Label${1:Name} = New-Object -TypeName System.Windows.Forms.Label",
+            "\\$ComboBox${1:Name} = New-Object -TypeName System.Windows.Forms.ComboBox$0"
+        ]
+    },
+
+    "Controls: Label & DateTimePicker":
+    {
+        "prefix": "Controls: Label & DateTimePicker",
+        "description": "Instantiate a Label and DateTimePicker control pair",
+        "body":
+        [
+            "\\$Label${1:Name} = New-Object -TypeName System.Windows.Forms.Label",
+            "\\$DateTimePicker${1:Name} = New-Object -TypeName System.Windows.Forms.DateTimePicker$0"
+        ]
+    },
+
+    "Controls: Label & TextBox":
+    {
+        "prefix": "Controls: Label & TextBox",
+        "description": "Instantiate a Label and Textbox control pair",
+        "body":
+        [
+            "\\$Label${1:Name} = New-Object -TypeName System.Windows.Forms.Label",
+            "\\$TextBox${1:Name} = New-Object -TypeName System.Windows.Forms.TextBox$0"
+        ]
+    },
+
+    "Controls: Label & TextBox & Search Button":
+    {
+        "prefix": "Controls: Label & TextBox & Search Button",
+        "description": "Instantiate a Label and Textbox control pair with Search Button",
+        "body":
+        [
+            "\\$Label${1:Name} = New-Object -TypeName System.Windows.Forms.Label",
+            "\\$TextBox${1:Name} = New-Object -TypeName System.Windows.Forms.TextBox",
+            "\\$ButtonSearch = New-Object -TypeName System.Windows.Forms.Button$0"
+        ]
+    },
+
+    "Controls: ToolTip":
+    {
+        "prefix": "Controls: ToolTip",
+        "description": "Instantiate an ToolTip control",
+        "body":
+        [
+            "\\$ToolTipMain = New-Object -TypeName System.Windows.Forms.ToolTip$0"
+        ]
+    },
+
+    "Event Handler: ComboBox SelectedIndexChanged":
+    {
+        "prefix": "Event Handler: ComboBox SelectedIndexChanged",
+        "description": "Create a ComboBox SelectedIndexChanged event handler",
+        "body":
+        [
+            "\\$ComboBox${1:Name}_SelectedIndexChanged =",
+            "{",
+            "\t$0",
+            "}"
+        ]
+    },
+
+    "Event Handler: FormMain Load":
+    {
+        "prefix": "Event Handler: FormMain Load",
+        "description": "Create a FormMain Load event handler",
+        "body":
+        [
+            "\\$FormMain_Load =",
+            "{",
+            "\t$0",
+            "}"
+        ]
+    },
+
+    "Event Handler: Generic":
+    {
+        "prefix": "Event Handler: Generic",
+        "description": "Create a generic event handler",
+        "body":
+        [
+            "${1:ControlName}_${2:EventName} =",
+            "{",
+            "\t$0",
+            "}"
+        ]
+    },
+
+    "Event Handler: Search Button Click (Native)":
+    {
+        "prefix": "Event Handler: Search Button Click (Native)",
+        "description": "Create a ButtonSearch Click event handler for use with the native Active Directory search control",
+        "body":
+        [
+            "\\$ButtonSearch_Click =",
+            "{",
+            "\tif (!\\$ADSearchProcess -or \\$ADSearchProcess.HasExited) {\\$Script:ADSearchProcess = Start-Process -FilePath \"Rundll32.exe\" -ArgumentList \"dsquery.dll OpenQueryWindow\" -PassThru}",
+            "}",
+            "# Uncomment and move the following line of code to be directly after \"Invoke-Command -ScriptBlock \\$ShowFormMain\":",
+            "# $0if (\\$ADSearchProcess -and !(\\$ADSearchProcess.HasExited)) {\\$ADSearchProcess.Kill()}"
+        ]
+    },
+
+    "Event Handler: TextBox TextChanged (Server Name)":
+    {
+        "prefix": "Event Handler: TextBox TextChanged (Server Name)",
+        "description": "Create a TextBox TextChanged event handler (Server Name)",
+        "body":
+        [
+            "\\$TextBox${1:Name}_TextChanged =",
+            "{",
+            "\tif (\\$TextBox${1:Name}.TextLength -eq 0)",
+            "\t{",
+            "\t\t\\$ErrorProviderMain.Clear()",
+            "\t\t\\$ButtonRun.Enabled = \\$false",
+            "\t}",
+            "\telseif (\\$TextBox${1:Name}.Text -match \"[^a-z0-9A-Z\\-]\")",
+            "\t{",
+            "\t\t\\$ErrorProviderMain.SetIconPadding(\\$TextBox${1:Name},-20)",
+            "\t\t\\$ErrorProviderMain.SetError(\\$TextBox${1:Name},\"The server name contains an invalid character.\")",
+            "\t\t\\$ButtonRun.Enabled = \\$false",
+            "\t}",
+            "\telse",
+            "\t{",
+            "\t\t\\$ErrorProviderMain.Clear()",
+            "\t\t\\$ButtonRun.Enabled = \\$true",
+            "\t}",
+            "}$0"
+        ]
+    },
+
+    "Event Handler: TextBox TextChanged (General Purpose)":
+    {
+        "prefix": "Event Handler: TextBox TextChanged (General Purpose)",
+        "description": "Create a TextBox TextChanged event handler (General Purpose)",
+        "body":
+        [
+            "\\$TextBox${1:Name}_TextChanged =",
+            "{",
+            "\tif (\\$TextBox${1:Name}.TextLength -eq 0)",
+            "\t{",
+            "\t\t\\$ErrorProviderMain.Clear()",
+            "\t\t\\$ButtonRun.Enabled = \\$false",
+            "\t}",
+            "\telse",
+            "\t{",
+            "\t\t\\$ErrorProviderMain.Clear()",
+            "\t\t\\$ButtonRun.Enabled = \\$true",
+            "\t}",
+            "}$0"
+        ]
+    },
+
+    "Function: Generic Advanced Function":
+    {
+        "prefix": "Function: Generic Advanced Function",
+        "description": "Advanced function",
+        "body":
+        [
+            "function ${1:Verb-Noun}",
+            "{",
+            "\t<#",
+            "\t.SYNOPSIS",
+            "\t\t${2:Short description}",
+            "\t.DESCRIPTION",
+            "\t\t${3:Long description}",
+            "\t.PARAMETER ${4:StringParameter}",
+            "\t\t${5:Parameter description}",
+            "\t.PARAMETER ${6:IntParameter}",
+            "\t\t${7:Parameter description}",
+            "\t.EXAMPLE",
+            "\t\t${8:Example #1}",
+            "\t.EXAMPLE",
+            "\t\t${9:Example #2}",
+            "\t#>",
+            "\r",
+            "\t[CmdletBinding(SupportsShouldProcess)]",
+            "\tParam",
+            "\t(",
+            "\t\t[Parameter(Mandatory = \\$true,Position = 0)] [string]\\$${4:StringParameter},",
+            "\t\t[Parameter(Mandatory = \\$true,Position = 1)] [int]\\$${6:IntParameter}",
+            "\t)",
+            "\r",
+            "\tBegin",
+            "\t{$0",
+            "\t}",
+            "\r",
+            "\tProcess",
+            "\t{",
+            "\t\tif (\\$PSCmdlet.ShouldProcess('Target','Operation'))",
+            "\t\t{",
+            "\t\t}",
+            "\t}",
+            "\r",
+            "\tEnd",
+            "\t{",
+            "\t}",
+            "}"
+        ]
+    },
+
+    "Function: Show-GetPSCredential":
+    {
+        "prefix": "Function: Show-FormGetPSCredential",
+        "description": "Show-FormGetPSCredential function",
+        "body":
+        [
+            "function Show-FormGetPSCredential",
+            "{",
+            "\tparam",
+            "\t(",
+            "\t\t[Parameter(Mandatory = \\$false,Position = 0)] [string]\\$UserName,",
+            "\t\t[Parameter(Mandatory = \\$false,Position = 1)] [string]\\$Caption = \"User Credentials\"",
+            "\t)",
+            "\r",
+            "\tAdd-Type -AssemblyName System.Windows.Forms",
+            "\t[System.Windows.Forms.Application]::EnableVisualStyles()",
+            "\r",
+            "\t\\$FormGetPSCredential = New-Object -TypeName System.Windows.Forms.Form",
+            "\t\\$GroupBoxMain = New-Object -TypeName System.Windows.Forms.GroupBox",
+            "\t\\$LabelUserName = New-Object -TypeName System.Windows.Forms.Label",
+            "\t\\$TextBoxUserName = New-Object -TypeName System.Windows.Forms.TextBox",
+            "\t\\$LabelPassword = New-Object -TypeName System.Windows.Forms.Label",
+            "\t\\$TextBoxPassword = New-Object -TypeName System.Windows.Forms.TextBox",
+            "\t\\$ButtonOK = New-Object -TypeName System.Windows.Forms.Button",
+            "\t\\$ButtonCancel = New-Object -TypeName System.Windows.Forms.Button",
+            "\r",
+            "\t\\$FormGetPSCredential.Text = \\$Caption",
+            "\t\\$FormGetPSCredential.ClientSize = New-Object -TypeName System.Drawing.Size(330,145)",
+            "\t\\$FormGetPSCredential.Font = New-Object -TypeName System.Drawing.Font(\"MS Sans Serif\",8)",
+            "\t\\$FormGetPSCredential.StartPosition = [System.Windows.Forms.FormStartPosition]::CenterScreen",
+            "\t\\$FormGetPSCredential.FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::FixedToolWindow",
+            "\t\\$FormGetPSCredential.TopMost = \\$true",
+            "\t\\$FormGetPSCredential.ShowInTaskbar = \\$false",
+            "\t\\$FormGetPSCredential.ControlBox = \\$false",
+            "\t\\$FormGetPSCredential.AcceptButton = \\$ButtonOK",
+            "\t\\$FormGetPSCredential.CancelButton = \\$ButtonCancel",
+            "\r",
+            "\t\\$GroupBoxMain.Location = New-Object -TypeName System.Drawing.Point(10,5)",
+            "\t\\$GroupBoxMain.Size = New-Object -TypeName System.Drawing.Size(310,90)",
+            "\t\\$FormGetPSCredential.Controls.Add(\\$GroupBoxMain)",
+            "\r",
+            "\t\\$LabelUserName.Location = New-Object -TypeName System.Drawing.Point(15,23)",
+            "\t\\$LabelUserName.AutoSize = \\$true",
+            "\t\\$LabelUserName.Text = \"User Name:\"",
+            "\t\\$GroupBoxMain.Controls.Add(\\$LabelUserName)",
+            "\r",
+            "\t\\$TextBoxUserName.Location = New-Object -TypeName System.Drawing.Point(85,20)",
+            "\t\\$TextBoxUserName.Size = New-Object -TypeName System.Drawing.Size(205,20)",
+            "\t\\$TextBoxUserName.TabIndex = 0",
+            "\t\\$TextBoxUserName.CharacterCasing = [System.Windows.Forms.CharacterCasing]::Upper",
+            "\t\\$TextBoxUserName.Text = \\$UserName",
+            "\t\\$TextBoxUserName.Add_TextChanged(",
+            "\t\t{",
+            "\t\t\tif (\\$TextBoxUserName.TextLength -eq 0)",
+            "\t\t\t{",
+            "\t\t\t\t\\$TextBoxPassword.Enabled = \\$false",
+            "\t\t\t\t\\$TextBoxPassword.Clear()",
+            "\t\t\t\t\\$ButtonOK.Enabled = \\$false",
+            "\t\t\t}",
+            "\t\t\telse {\\$TextBoxPassword.Enabled = \\$true}",
+            "\t\t}",
+            "\t)",
+            "\t\\$GroupBoxMain.Controls.Add(\\$TextBoxUserName)",
+            "\r",
+            "\t\\$LabelPassword.Location = New-Object -TypeName System.Drawing.Point(15,58)",
+            "\t\\$LabelPassword.AutoSize = \\$true",
+            "\t\\$LabelPassword.Text = \"Password:\"",
+            "\t\\$GroupBoxMain.Controls.Add(\\$LabelPassword)",
+            "\r",
+            "\t\\$TextBoxPassword.Location = New-Object -TypeName System.Drawing.Point(85,55)",
+            "\t\\$TextBoxPassword.Size = New-Object -TypeName System.Drawing.Size(205,20)",
+            "\t\\$TextBoxPassword.TabIndex = 1",
+            "\t\\$TextBoxPassword.Enabled = \\$false",
+            "\t\\$TextBoxPassword.UseSystemPasswordChar = \\$true",
+            "\t\\$TextBoxPassword.Add_TextChanged(",
+            "\t\t{",
+            "\t\t\tif (\\$TextBoxPassword.TextLength -eq 0) {\\$ButtonOK.Enabled = \\$false}",
+            "\t\t\telse {\\$ButtonOK.Enabled = \\$true}",
+            "\t\t}",
+            "\t)",
+            "\t\\$GroupBoxMain.Controls.Add(\\$TextBoxPassword)",
+            "\r",
+            "\t\\$ButtonOK.Location = New-Object -TypeName System.Drawing.Point(155,110)",
+            "\t\\$ButtonOK.Size = New-Object -TypeName System.Drawing.Size(75,25)",
+            "\t\\$ButtonOK.TabIndex = 2",
+            "\t\\$ButtonOK.Text = \"OK\"",
+            "\t\\$ButtonOK.Enabled = \\$false",
+            "\t\\$ButtonOK.DialogResult = [System.Windows.Forms.DialogResult]::OK",
+            "\t\\$FormGetPSCredential.Controls.Add(\\$ButtonOK)",
+            "\r",
+            "\t\\$ButtonCancel.Location = New-Object -TypeName System.Drawing.Point(245,110)",
+            "\t\\$ButtonCancel.Size = New-Object -TypeName System.Drawing.Size(75,25)",
+            "\t\\$ButtonCancel.TabIndex = 3",
+            "\t\\$ButtonCancel.Text = \"Cancel\"",
+            "\t\\$ButtonCancel.DialogResult = [System.Windows.Forms.DialogResult]::Cancel",
+            "\t\\$FormGetPSCredential.Controls.Add(\\$ButtonCancel)",
+            "\r",
+            "\tif (\\$UserName)",
+            "\t{",
+            "\t\t\\$FormGetPSCredential.ActiveControl = \\$TextBoxPassword",
+            "\t\t\\$TextBoxPassword.Enabled = \\$true",
+            "\t}",
+            "\tif (\\$FormGetPSCredential.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK)",
+            "\t{",
+            "\t\t\\$UserName = \\$TextBoxUserName.Text",
+            "\t\t\\$Password = ConvertTo-SecureString -String \\$TextBoxPassword.Text -AsPlainText -Force",
+            "\t\t\\$Credential = New-Object -TypeName System.Management.Automation.PSCredential(\\$UserName,\\$Password)",
+            "\t\tRemove-Variable -Name Password",
+            "\t\t\\$Credential",
+            "\t}",
+            "\t\\$FormGetPSCredential.Dispose()",
+            "}$0"
+        ]
+    },
+
+    "Invoke: MessageBox::Show Function":
+    {
+        "prefix": "Invoke: MessageBox::Show Function",
+        "description": "Display a message box",
+        "body":
+        [
+            "[void][System.Windows.Forms.MessageBox]::Show(",
+            "\t\"${1:Message}\",",
+            "\t\"${2:Title}\",",
+            "\t[System.Windows.Forms.MessageBoxButtons]::OK,",
+            "\t[System.Windows.Forms.MessageBoxIcon]::${3|Information,Warning,Error|}",
+            ")$0"
+        ]
+    },
+
+    "Invoke: Show-FormGetPSCredential Function":
+    {
+        "prefix": "Invoke: Show-FormPSCredential Function",
+        "description": "Call the Show-FormPSCredential function",
+        "body":
+        [
+            "if (\\$Credential = Show-FormGetPSCredential -UserName \\$env:USERNAME)",
+            "{",
+            "\t${1:# Add action here...}",
+            "\tRemove-Variable -Name Credential",
+            "}$0"
+        ]
+    },
+
+    "Properties: CheckBox":
+    {
+        "prefix": "Properties: CheckBox",
+        "description": "Assign properties to a CheckBox control",
+        "body":
+        [
+            "\\$CheckBox${1:Name}.Location = New-Object -TypeName System.Drawing.Point(15,${2:15|P+35})",
+            "\\$CheckBox${1:Name}.AutoSize = \\$true",
+            "\\$CheckBox${1:Name}.TabIndex = ${3:Index}",
+            "\\$CheckBox${1:Name}.Text = \"${4:CheckBox Text}\"",
+            "\\$CheckBox${1:Name}.Add_CheckedChanged(\\$CheckBox${1:Name}_CheckedChanged)",
+            "\\$GroupBoxMain.Controls.Add(\\$CheckBox${1:Name})$0"
+        ]
+    },
+
+    "Properties: Label & ComboBox":
+    {
+        "prefix": "Properties: Label & ComboBox",
+        "description": "Assign properties to a Label and ComboBox control pair",
+        "body":
+        [
+            "\\$Label${1:Name}.Location = New-Object -TypeName System.Drawing.Point(15,${2:15|P+35})",
+            "\\$Label${1:Name}.AutoSize = \\$true",
+            "\\$Label${1:Name}.Text = \"${3:Label Text}:\"",
+            "\\$GroupBoxMain.Controls.Add(\\$Label${1:Name})",
+            "\r",
+            "\\$ComboBox${1:Name}.Location = New-Object -TypeName System.Drawing.Point(15,${4:P+20})",
+            "\\$ComboBox${1:Name}.Size = New-Object -TypeName System.Drawing.Size((\\$FormWidth - 50),20)",
+            "\\$ComboBox${1:Name}.TabIndex = ${5:Index}",
+            "\\$ComboBox${1:Name}.DropDownStyle = [System.Windows.Forms.ComboBoxStyle]::DropDownList",
+            "\\$ComboBox${1:Name}.Add_SelectedIndexChanged(\\$ComboBox${1:Name}_SelectedIndexChanged)",
+            "\\$GroupBoxMain.Controls.Add(\\$ComboBox${1:Name})$0"
+        ]
+    },
+
+    "Properties: Label & DateTimePicker":
+    {
+        "prefix": "Properties: Label & DateTimePicker",
+        "description": "Assign properties to a Label and DateTimePicker control pair",
+        "body":
+        [
+            "\\$Label${1:Name}.Location = New-Object -TypeName System.Drawing.Point(15,${2:15|P+35})",
+            "\\$Label${1:Name}.AutoSize = \\$true",
+            "\\$Label${1:Name}.Text = \"${3:Label Text}:\"",
+            "\\$GroupBoxMain.Controls.Add(\\$Label${1:Name})",
+            "\r",
+            "\\$DateTimePicker${1:Name}.Location = New-Object -TypeName System.Drawing.Point(15,${4:P+20})",
+            "\\$DateTimePicker${1:Name}.Size = New-Object -TypeName System.Drawing.Size((\\$FormWidth - 50),20)",
+            "\\$DateTimePicker${1:Name}.TabIndex = ${5:Index}",
+            "\\$DateTimePicker${1:Name}.Format = [System.Windows.Forms.DateTimePickerFormat]::Custom",
+            "\\$DateTimePicker${1:Name}.CustomFormat = \"MM/dd/yyyy\"",
+            "\\$DateTimePicker${1:Name}.MinDate = [System.DateTime]::Today",
+            "\\$GroupBoxMain.Controls.Add(\\$DateTimePicker${1:Name})$0"
+        ]
+    },
+
+    "Properties: Label & Multiline TextBox":
+    {
+        "prefix": "Properties: Label & Multiline-TextBox",
+        "description": "Assign properties to a Label and multiline Textbox control pair",
+        "body":
+        [
+            "\\$Label${1:Name}.Location = New-Object -TypeName System.Drawing.Point(15,${2:15|P+35})",
+            "\\$Label${1:Name}.AutoSize = \\$true",
+            "\\$Label${1:Name}.Text = \"${3:Label Text}:\"",
+            "\\$GroupBoxMain.Controls.Add(\\$Label${1:Name})",
+            "\r",
+            "\\$TextBox${1:Name}.Location = New-Object -TypeName System.Drawing.Point(15,${4:P+20})",
+            "\\$TextBox${1:Name}.Size = New-Object -TypeName System.Drawing.Size((\\$FormWidth - 50),86)",
+            "\\$TextBox${1:Name}.TabIndex = ${5:Index}",
+            "\\$TextBox${1:Name}.Multiline = \\$true",
+            "\\$TextBox${1:Name}.ScrollBars = [System.Windows.Forms.ScrollBars]::Vertical",
+            "\\$TextBox${1:Name}.AcceptsReturn = \\$true$0",
+            "\\$TextBox${1:Name}.Add_TextChanged(\\$TextBox${1:Name}_TextChanged)",
+            "\\$GroupBoxMain.Controls.Add(\\$TextBox${1:Name})"
+        ]
+    },
+
+    "Properties: Label & TextBox":
+    {
+        "prefix": "Properties: Label & TextBox",
+        "description": "Assign properties to a Label and Textbox control pair",
+        "body":
+        [
+            "\\$Label${1:Name}.Location = New-Object -TypeName System.Drawing.Point(15,${2:15|P+35})",
+            "\\$Label${1:Name}.AutoSize = \\$true",
+            "\\$Label${1:Name}.Text = \"${3:Label Text}:\"",
+            "\\$GroupBoxMain.Controls.Add(\\$Label${1:Name})",
+            "\r",
+            "\\$TextBox${1:Name}.Location = New-Object -TypeName System.Drawing.Point(15,${4:P+20})",
+            "\\$TextBox${1:Name}.Size = New-Object -TypeName System.Drawing.Size((\\$FormWidth - 50),20)",
+            "\\$TextBox${1:Name}.TabIndex = ${5:Index}$0",
+            "\\$TextBox${1:Name}.Add_TextChanged(\\$TextBox${1:Name}_TextChanged)",
+            "\\$GroupBoxMain.Controls.Add(\\$TextBox${1:Name})"
+        ]
+    },
+
+    "Properties: Label & TextBox & Search Button":
+    {
+        "prefix": "Properties: Label & TextBox & Search Button",
+        "description": "Assign properties to a Label and Textbox control pair with Search Button",
+        "body":
+        [
+            "\\$Label${1:Name}.Location = New-Object -TypeName System.Drawing.Point(15,${2:15|P+35})",
+            "\\$Label${1:Name}.AutoSize = \\$true",
+            "\\$Label${1:Name}.Text = \"${3:Label Text}:\"",
+            "\\$GroupBoxMain.Controls.Add(\\$Label${1:Name})",
+            "\r",
+            "\\$TextBox${1:Name}.Location = New-Object -TypeName System.Drawing.Point(15,${4:P+20})",
+            "\\$TextBox${1:Name}.Size = New-Object -TypeName System.Drawing.Size((\\$FormWidth - 75),20)",
+            "\\$TextBox${1:Name}.TabIndex = ${5:Index}$0",
+            "\\$TextBox${1:Name}.Add_TextChanged(\\$TextBox${1:Name}_TextChanged)",
+            "\\$GroupBoxMain.Controls.Add(\\$TextBox${1:Name})",
+            "\r",
+            "\\$ButtonSearch.Location = New-Object -TypeName System.Drawing.Point((\\$FormWidth - 60),${6:P-1})",
+            "\\$ButtonSearch.Size = New-Object -TypeName System.Drawing.Size(25,22)",
+            "\\$ButtonSearch.TabStop = \\$false",
+            "\\$ButtonSearch.Text = [char]926",
+            "\\$ButtonSearch.Add_Click(\\$ButtonSearch_Click)",
+            "\\$GroupBoxMain.Controls.Add(\\$ButtonSearch)"
+        ]
+    }
+}

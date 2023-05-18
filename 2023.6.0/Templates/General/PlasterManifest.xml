@@ -1,0 +1,36 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<plasterManifest
+  schemaVersion='1.1'
+  templateType='Project' xmlns='http://www.microsoft.com/schemas/PowerShell/Plaster/v1'>
+  <metadata>
+    <name>General</name>
+    <id>a562f40e-2572-420d-abba-eec90fa8ec46</id>
+    <version>1.0.0</version>
+    <title>General ScriptoForm Template</title>
+    <description>Provides a set of default files that can be used to create a starter ScriptoForm used for network management purposes.</description>
+    <author>Smart Ace Designs</author>
+    <tags>General</tags>
+  </metadata>
+  <parameters>
+    <parameter name='Name' type='text' prompt='Name'/>
+    <parameter name='Author' type='user-fullname' prompt='Author'/>
+    <parameter name='FormHeight' type='text' prompt='FormHeight'/>
+  </parameters>
+  <content>
+    <message>Creating build folder...</message>
+    <file source='' destination='Build'/>
+
+    <message>Creating default script file...</message>
+    <templateFile source='Script.ps1' destination='${PLASTER_PARAM_Name}.ps1'/>
+
+    <message>Creating default readme file...</message>
+    <templateFile source='Readme.md' destination='Readme.md'/>
+
+    <message>Creating default gitignore file...</message>
+    <templateFile source='.gitignore' destination='.gitignore'/>
+
+    <message>Creating default build files...</message>
+    <file source='Build\Build.cs' destination=''/>
+    <templateFile source='Build\Build.csproj' destination=''/>
+  </content>
+</plasterManifest>
