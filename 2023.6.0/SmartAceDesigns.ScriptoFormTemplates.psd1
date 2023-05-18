@@ -20,7 +20,7 @@ Description = 'Smart Ace Designs ScriptoForm Templates Module
 
 This module contains a Plaster template and functions used for scaffolding a basic starter ScriptoForm project that a script developer can use to create complex management tools.
 
-A ScriptoForm is a PowerShell script that generates and displays a Microsoft WinForms application that can be used for a specific management or system administration task in a computer network environment.
+A ScriptoForm is a PowerShell script that generates and displays a Microsoft Windows Forms application that can be used for a specific management or system administration task in a computer network environment.
 Typically, a ScriptoForm is compiled into an executable file which hides the PowerShell console window during execution and provides a more seamless and familiar experience to the user.
 
 A ScriptoForm project is the set of files and folders, including the PowerShell script, that can be compiled into an executable file using the Microsoft .NET CLI utility (dotnet.exe) which is available with any Microsoft .NET SDK.'
