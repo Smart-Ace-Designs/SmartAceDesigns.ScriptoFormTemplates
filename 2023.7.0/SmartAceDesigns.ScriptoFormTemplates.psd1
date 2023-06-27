@@ -9,26 +9,38 @@ Generated on: 01/01/2023
 
 @{
 RootModule = 'SmartAceDesigns.ScriptoFormTemplates.psm1'
-ModuleVersion = '2023.6.0'
+ModuleVersion = '2023.7.0'
 CompatiblePSEditions = @('Desktop','Core')
 PowerShellVersion = '5.1'
 GUID = '99d484e4-d391-4b7e-a45d-1adcfbc2da5b'
 Author = 'Smart Ace Designs'
 CompanyName = 'Smart Ace Designs'
 Copyright = '(c) 2023 Smart Ace Designs. All rights reserved.'
-Description = 'Smart Ace Designs ScriptoForm Templates Module
-
-This module contains a Plaster template and functions used for scaffolding a basic starter ScriptoForm project that a script developer can use to create complex management tools.
+Description = @'
+Smart Ace Designs ScriptoForm Templates Module.  This module contains a Plaster template and functions used for scaffolding a basic starter ScriptoForm project that a script developer can use to create complex management tools.
 
 A ScriptoForm is a PowerShell script that generates and displays a Microsoft Windows Forms application that can be used for a specific management or system administration task in a computer network environment.
 Typically, a ScriptoForm is compiled into an executable file which hides the PowerShell console window during execution and provides a more seamless and familiar experience to the user.
 
-A ScriptoForm project is the set of files and folders, including the PowerShell script, that can be compiled into an executable file using the Microsoft .NET CLI utility (dotnet.exe) which is available with any Microsoft .NET SDK.'
+A ScriptoForm project is the set of files and folders, including the PowerShell script, that can be compiled into an executable file using the Microsoft .NET CLI utility (dotnet.exe) which is available with any Microsoft .NET SDK.
+'@
 
 PrivateData = @{
     PSData = @{
         ProjectUri = 'https://github.com/Smart-Ace-Designs/SmartAceDesigns.ScriptoFormTemplates'
         LicenseUri = 'https://github.com/Smart-Ace-Designs/SmartAceDesigns.ScriptoFormTemplates/blob/main/LICENSE'
+        
+        ReleaseNotes = @'
+2023.7.0 - July 2023 Release
+- Set mouse to WaitCursor while work is being performed
+- Minor white space cleanup in README file
+- Fix terminology used in the module manifest file
+- Fix description in the module manifest file
+- Add release notes to the module manifest file
+ 
+2023.6.0 - June 2023 Release
+- Initial release
+'@
         
         Tags = @(
                 'ScriptoForm',
