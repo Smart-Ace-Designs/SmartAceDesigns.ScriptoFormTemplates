@@ -24,7 +24,7 @@ The following files within the template folder of this module are used by Plaste
 - Build\Build.cs
 - Build\Build.csproj
 - .gitignore
-- Readme.md
+- README.md
 - Script.ps1
 
 ## Template Deployment Instructions
