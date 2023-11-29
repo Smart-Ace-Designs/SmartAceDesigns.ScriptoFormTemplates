@@ -24,7 +24,7 @@
     <templateFile source='Script.ps1' destination='${PLASTER_PARAM_Name}.ps1'/>
 
     <message>Creating default readme file...</message>
-    <templateFile source='Readme.md' destination='Readme.md'/>
+    <templateFile source='README.md' destination='README.md'/>
 
     <message>Creating default gitignore file...</message>
     <templateFile source='.gitignore' destination='.gitignore'/>
