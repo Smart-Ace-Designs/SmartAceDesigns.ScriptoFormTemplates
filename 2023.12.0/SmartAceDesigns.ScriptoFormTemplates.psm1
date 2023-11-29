@@ -177,7 +177,7 @@ function Build-SADScriptoFormExecutable
     [CmdletBinding()]
     Param
     (
-        [Parameter(Mandatory = $false, Position = 0)] [ValidateSet("All","Legacy","LTS","STS")] [string]$BuildTarget = "All",
+        [Parameter(Mandatory = $false, Position = 0)] [ValidateSet("All","Legacy","LTS-Legacy","LTS","STS")] [string]$BuildTarget = "All",
         [Parameter(Mandatory = $false, Position = 1)] [string]$BuildFolder = "Build",
         [Parameter(Mandatory = $false, Position = 2)] [string]$CertificateFriendlyName = "PowerShell",
         [Parameter(Mandatory = $false, Position = 3)] [string]$CLI = "dotnet.exe",
@@ -189,8 +189,9 @@ function Build-SADScriptoFormExecutable
     if (Get-Command -Name $CLI -ErrorAction SilentlyContinue)
     {
         $Frameworks = @([PSCustomObject]@{Name = "Legacy";Version = "net48";Enabled=$false},
-                        [PSCustomObject]@{Name = "LTS";Version = "net6.0-windows";Enabled=$false},
-                        [PSCustomObject]@{Name = "STS";Version = "net7.0-windows";Enabled=$false})
+                        [PSCustomObject]@{Name = "LTS-Legacy";Version = "net6.0-windows";Enabled=$false},
+                        [PSCustomObject]@{Name = "STS";Version = "net7.0-windows";Enabled=$false},
+                        [PSCustomObject]@{Name = "LTS";Version = "net8.0-windows";Enabled=$false})
     
         if ($BuildTarget -eq "All")
         {

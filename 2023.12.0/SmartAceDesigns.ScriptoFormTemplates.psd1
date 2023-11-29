@@ -9,7 +9,7 @@ Generated on: 01/01/2023
 
 @{
 RootModule = 'SmartAceDesigns.ScriptoFormTemplates.psm1'
-ModuleVersion = '2023.7.0'
+ModuleVersion = '2023.12.0'
 CompatiblePSEditions = @('Desktop','Core')
 PowerShellVersion = '5.1'
 GUID = '99d484e4-d391-4b7e-a45d-1adcfbc2da5b'
@@ -31,6 +31,12 @@ PrivateData = @{
         LicenseUri = 'https://github.com/Smart-Ace-Designs/SmartAceDesigns.ScriptoFormTemplates/blob/main/LICENSE'
         
         ReleaseNotes = @'
+2023.12.0 - December 2023 Release
+- Add support for PowerShell 7.4
+- Add support for Microsoft .NET 8
+- Modify output location for Microsoft .NET 6
+- Rename README files to match industry standards (uppercase)
+
 2023.7.0 - July 2023 Release
 - Set mouse to WaitCursor while work is being performed
 - Minor white space cleanup in README file

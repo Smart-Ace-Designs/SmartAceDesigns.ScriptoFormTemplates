@@ -1,10 +1,8 @@
-# **ScriptoForm Templates Module**
-
-## Introduction
+# ScriptoForm Templates Module
 This module contains a [PowerShell Plaster](https://www.powershellgallery.com/packages/Plaster) template and deployment functions that can be used to create a starter ScriptoForm project.
 
 ## Purpose
-A *ScriptoForm* ("Script Oh Form") is a PowerShell script that generates and displays a [Microsoft Windows Forms](https://learn.microsoft.com/en-us/dotnet/desktop/winforms/overview/?view=netdesktop-7.0#introduction) application that can be used for a specific management or system administration task in a network environment.  Typically, this script is compiled into an executable file which hides the PowerShell console window during execution and provides a more seamless and familiar experience to the user.  A *ScriptoForm project* is the set of files and folders, including the PowerShell script, that can be used to compile the script into an executable file.
+A *ScriptoForm* is a PowerShell script that generates and displays a [Microsoft Windows Forms](https://learn.microsoft.com/en-us/dotnet/desktop/winforms/overview/?view=netdesktop-8.0#introduction) application that can be used for a specific management or system administration task in a network environment.  Typically, this script is compiled into an executable file which hides the PowerShell console window during execution and provides a more seamless and familiar experience to the user.  A *ScriptoForm project* is the set of files and folders, including the PowerShell script, that can be used to compile the script into an executable file.
 
 The template folder within this module contains a PlasterManifest.xml file which provides the instructions used by Plaster to generate the new ScriptoForm project folders and files.  Once deployed, additional code should be added to the PowerShell script to provide the custom functionality of the ScriptoForm.
 
@@ -17,6 +15,7 @@ The PowerShell script and any additional support files will be embedded into the
     - [Windows PowerShell 5.1](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-5.1)
     - [PowerShell 7.2.x](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.2)
     - [PowerShell 7.3.x](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.3)
+    - [PowerShell 7.4.x](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.4)
 - This project requires the following PowerShell modules: 
     - [Plaster 1.1.4](https://www.powershellgallery.com/packages/Plaster)
 
