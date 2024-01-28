@@ -1,0 +1,29 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+    {
+        "key": "alt+a",
+        "command": "PowerShell.InvokeRegisteredEditorCommand",
+        "args": {
+            "commandName": "BuildScriptoForms"
+        },
+        "when": "editorLangId == 'powershell'"
+    },
+
+    {
+        "key": "alt+c",
+        "command": "PowerShell.InvokeRegisteredEditorCommand",
+        "args": {
+            "commandName": "BuildScriptoForm"
+        },
+        "when": "editorLangId == 'powershell'"
+    },
+    
+    {
+        "key": "alt+s",
+        "command": "PowerShell.InvokeRegisteredEditorCommand",
+        "args": {
+            "commandName": "SignScript"
+        },
+        "when": "editorLangId == 'powershell'"
+    }
+]
