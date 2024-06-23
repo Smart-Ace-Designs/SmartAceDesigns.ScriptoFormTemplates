@@ -44,7 +44,7 @@ Follow these guidelines to customize the files in the new ScriptoForm project fo
 - [Script File] Add custom functions to the *Functions* region and remove the temporary reminder comments; remove the *Functions* region if unused.
 - [Script File] Add additional control event handler definitions to the *Handlers* region for any new controls you added and remove the temporary reminder comments.
 - [Script File] Add script functionality, exception handling, and control reset code in the *$ButtonRun_Click* script block and remove the temporary reminder comments.
-- [Readme File] Add content to the *Purpose* region.
+- [README File] Add content to the *Purpose* region.
 - [Project Folder] Add additional support files referenced by the PowerShell script to the folder.
 - [CSPROJ File] Add an `<EmbeddedResource>` sub-element, for each support file referenced by the PowerShell script, to the `<ItemGroup>` element.
 - [Build Folder] Add a custom icon file to the folder if the default icon is unsuitable.
