@@ -9,13 +9,13 @@ Generated on: 01/01/2023
 
 @{
 RootModule = 'SmartAceDesigns.ScriptoFormTemplates.psm1'
-ModuleVersion = '2023.12.0'
+ModuleVersion = '2024.6.0'
 CompatiblePSEditions = @('Desktop','Core')
 PowerShellVersion = '5.1'
 GUID = '99d484e4-d391-4b7e-a45d-1adcfbc2da5b'
 Author = 'Smart Ace Designs'
 CompanyName = 'Smart Ace Designs'
-Copyright = '(c) 2023 Smart Ace Designs. All rights reserved.'
+Copyright = '(c) 2024 Smart Ace Designs. All rights reserved.'
 Description = @'
 Smart Ace Designs ScriptoForm Templates Module.  This module contains a Plaster template and functions used for scaffolding a basic starter ScriptoForm project that a script developer can use to create complex management tools.
 
@@ -31,6 +31,10 @@ PrivateData = @{
         LicenseUri = 'https://github.com/Smart-Ace-Designs/SmartAceDesigns.ScriptoFormTemplates/blob/main/LICENSE'
         
         ReleaseNotes = @'
+2024.6.0 - December 2023 Release
+- Remove support for PowerShell 7.3 (End-of-support: May 8, 2024)
+- Remove support for Microsoft .NET 7 (End-of-support: May 28, 2024)
+
 2023.12.0 - December 2023 Release
 - Add support for PowerShell 7.4
 - Add support for Microsoft .NET 8

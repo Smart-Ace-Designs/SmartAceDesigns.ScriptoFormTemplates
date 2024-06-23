@@ -14,7 +14,6 @@ $CertificateFriendlyName = "PowerShell"
 $CLI = "C:\Program Files\dotnet\dotnet.exe"
 $Frameworks = @([PSCustomObject]@{Name = "Legacy";Version = "net48";Enabled=$true},
                 [PSCustomObject]@{Name = "LTS-Legacy";Version = "net6.0-windows";Enabled=$true},
-                [PSCustomObject]@{Name = "STS";Version = "net7.0-windows";Enabled=$true},
                 [PSCustomObject]@{Name = "LTS";Version = "net8.0-windows";Enabled=$true})
 $ProjectFileName = "Build.csproj"
 $ReleaseFolder = "Release"

@@ -14,7 +14,6 @@ The PowerShell script and any additional support files will be embedded into the
 - This project supports the following command shells:
     - [Windows PowerShell 5.1](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-5.1)
     - [PowerShell 7.2.x](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.2)
-    - [PowerShell 7.3.x](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.3)
     - [PowerShell 7.4.x](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.4)
 - This project requires the following PowerShell modules: 
     - [Plaster 1.1.4](https://www.powershellgallery.com/packages/Plaster)
