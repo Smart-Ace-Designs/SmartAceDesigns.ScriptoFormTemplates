@@ -31,7 +31,7 @@ PrivateData = @{
         LicenseUri = 'https://github.com/Smart-Ace-Designs/SmartAceDesigns.ScriptoFormTemplates/blob/main/LICENSE'
         
         ReleaseNotes = @'
-2024.6.0 - December 2023 Release
+2024.6.0 - June 2024 Release
 - Remove support for PowerShell 7.3 (End-of-support: May 8, 2024)
 - Remove support for Microsoft .NET 7 (End-of-support: May 28, 2024)
 
