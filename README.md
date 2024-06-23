@@ -1,5 +1,5 @@
 # ScriptoForm Templates Module
-This module contains a [PowerShell Plaster](https://www.powershellgallery.com/packages/Plaster) template and deployment functions that can be used to create a starter ScriptoForm project.
+This module contains a [PowerShell Plaster](https://www.powershellgallery.com/packages/Plaster) template and deployment function that can be used to create a starter ScriptoForm project.
 
 ## Purpose
 A *ScriptoForm* is a PowerShell script that generates and displays a [Microsoft Windows Forms](https://learn.microsoft.com/en-us/dotnet/desktop/winforms/overview/?view=netdesktop-8.0#introduction) application that can be used for a specific management or system administration task in a network environment.  Typically, this script is compiled into an executable file which hides the PowerShell console window during execution and provides a more seamless and familiar experience to the user.  A *ScriptoForm project* is the set of files and folders, including the PowerShell script, that can be used to compile the script into an executable file.
@@ -33,7 +33,7 @@ The following files within the template folder of this module are used by Plaste
 - Use PowerShell to run the ``New-SADScriptoFormProject`` function and create a new ScriptoForm project.  Provide appropriate parameters to the function as required for your project.  For specific instructions use: ``Get-Help New-SADScriptoFormProject -Full``
 - Customize the new project files that were created from the deployment using the customization guidelines below.
 
-https://github.com/Smart-Ace-Designs/SmartAceDesigns.ScriptoFormTemplates/assets/132539186/21b636b0-9b66-4013-87ee-22988cde02c5
+https://github.com/Smart-Ace-Designs/SmartAceDesigns.ScriptoFormTemplates/assets/132539186/6a72ddef-d11d-444f-b7c2-7e0657f6cdb4
 
 ## Customization Guidelines
 Follow these guidelines to customize the files in the new ScriptoForm project folder after deployment:
