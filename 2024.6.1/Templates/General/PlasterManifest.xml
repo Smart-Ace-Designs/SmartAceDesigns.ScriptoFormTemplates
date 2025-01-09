@@ -27,7 +27,7 @@
     <templateFile source='README.md' destination='README.md'/>
 
     <message>Creating default gitignore file...</message>
-    <templateFile source='.gitignore' destination='.gitignore'/>
+    <templateFile source='.gitignore.example' destination='.gitignore'/>
 
     <message>Creating default build files...</message>
     <file source='Build\Build.cs' destination=''/>
