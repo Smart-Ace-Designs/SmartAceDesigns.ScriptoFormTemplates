@@ -10,9 +10,9 @@ Notes:
 
 #region Settings
 <#
-Add global settings here...
+Add global settings here, using SCREAMING_SNAKE_CASE to indicate constants that should not be changed at runtime...
 #>
-$SupportContact = "<%= $PLASTER_PARAM_Author %>"
+$SUPPORT_CONTACT = "<%= $PLASTER_PARAM_Author %>"
 #endregion
 
 #region Assemblies
@@ -129,7 +129,7 @@ $ButtonRun_Click =
         Add custom exception handling here...
         #>
         [void][System.Windows.Forms.MessageBox]::Show(
-            $PSItem.Exception.Message + "`n`nPlease contact $SupportContact for technical support.",
+            $PSItem.Exception.Message + "`n`nPlease contact $SUPPORT_CONTACT for technical support.",
             "Exception",
             [System.Windows.Forms.MessageBoxButtons]::OK,
             [System.Windows.Forms.MessageBoxIcon]::Warning

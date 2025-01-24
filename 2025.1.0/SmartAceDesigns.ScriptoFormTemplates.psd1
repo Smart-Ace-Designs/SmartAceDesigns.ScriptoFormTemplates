@@ -9,13 +9,13 @@ Generated on: 01/01/2023
 
 @{
 RootModule = 'SmartAceDesigns.ScriptoFormTemplates.psm1'
-ModuleVersion = '2024.6.1'
+ModuleVersion = '2025.1.0'
 CompatiblePSEditions = @('Desktop','Core')
 PowerShellVersion = '5.1'
 GUID = '99d484e4-d391-4b7e-a45d-1adcfbc2da5b'
 Author = 'Smart Ace Designs'
 CompanyName = 'Smart Ace Designs'
-Copyright = '(c) 2024 Smart Ace Designs. All rights reserved.'
+Copyright = '(c) 2025 Smart Ace Designs. All rights reserved.'
 Description = @'
 Smart Ace Designs ScriptoForm Templates Module.  This module contains a Plaster template and functions used for scaffolding a basic starter ScriptoForm project that a script developer can use to create complex management tools.
 
@@ -31,12 +31,20 @@ PrivateData = @{
         LicenseUri = 'https://github.com/Smart-Ace-Designs/SmartAceDesigns.ScriptoFormTemplates/blob/main/LICENSE'
         
         ReleaseNotes = @'
+2025.1.0 - January 2025 Release
+- Add support for PowerShell 7.5
+- Add support for Microsoft .NET 9
+- Remove support for PowerShell 7.2 (End of support: November 8, 2024)
+- Remove support for Microsoft .NET 6 (End of support: November 12, 2024)
+- Remove double-space after sentences in markdown files
+- Converts template to use SCREAMING_SNAKE_CASE naming convention for settings (aka constants)
+
 2024.6.1 - January 2025 Maintenance Release
 - Fix issue with .gitignore file being excluded from PowerShell Gallery
 
 2024.6.0 - June 2024 Release
-- Remove support for PowerShell 7.3 (End-of-support: May 8, 2024)
-- Remove support for Microsoft .NET 7 (End-of-support: May 28, 2024)
+- Remove support for PowerShell 7.3 (End of support: May 8, 2024)
+- Remove support for Microsoft .NET 7 (End of support: May 28, 2024)
 
 2023.12.0 - December 2023 Release
 - Add support for PowerShell 7.4
