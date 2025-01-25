@@ -1,7 +1,7 @@
 {
-    "Controls: CheckBox":
+    "ScriptoForm Controls: CheckBox":
     {
-        "prefix": "Controls: CheckBox",
+        "prefix": "ScriptoForm Controls: CheckBox",
         "description": "Instantiate a CheckBox control",
         "body":
         [
@@ -9,9 +9,9 @@
         ]
     },
 
-    "Controls: ErrorProvider":
+    "ScriptoForm Controls: ErrorProvider":
     {
-        "prefix": "Controls: ErrorProvider",
+        "prefix": "ScriptoForm Controls: ErrorProvider",
         "description": "Instantiate an ErrorProvider control",
         "body":
         [
@@ -19,9 +19,9 @@
         ]
     },
 
-    "Controls: Label & ComboBox":
+    "ScriptoForm Controls: Label & ComboBox":
     {
-        "prefix": "Controls: Label & ComboBox",
+        "prefix": "ScriptoForm Controls: Label & ComboBox",
         "description": "Instantiate a Label and ComboBox control pair",
         "body":
         [
@@ -30,9 +30,9 @@
         ]
     },
 
-    "Controls: Label & DateTimePicker":
+    "ScriptoForm Controls: Label & DateTimePicker":
     {
-        "prefix": "Controls: Label & DateTimePicker",
+        "prefix": "ScriptoForm Controls: Label & DateTimePicker",
         "description": "Instantiate a Label and DateTimePicker control pair",
         "body":
         [
@@ -41,9 +41,9 @@
         ]
     },
 
-    "Controls: Label & TextBox":
+    "ScriptoForm Controls: Label & TextBox":
     {
-        "prefix": "Controls: Label & TextBox",
+        "prefix": "ScriptoForm Controls: Label & TextBox",
         "description": "Instantiate a Label and Textbox control pair",
         "body":
         [
@@ -52,9 +52,9 @@
         ]
     },
 
-    "Controls: Label & TextBox & Search Button":
+    "ScriptoForm Controls: Label & TextBox & Search Button":
     {
-        "prefix": "Controls: Label & TextBox & Search Button",
+        "prefix": "ScriptoForm Controls: Label & TextBox & Search Button",
         "description": "Instantiate a Label and Textbox control pair with Search Button",
         "body":
         [
@@ -64,9 +64,9 @@
         ]
     },
 
-    "Controls: ToolTip":
+    "ScriptoForm Controls: ToolTip":
     {
-        "prefix": "Controls: ToolTip",
+        "prefix": "ScriptoForm Controls: ToolTip",
         "description": "Instantiate an ToolTip control",
         "body":
         [
@@ -74,9 +74,9 @@
         ]
     },
 
-    "Event Handler: ComboBox SelectedIndexChanged":
+    "ScriptoForm Event Handler: ComboBox SelectedIndexChanged":
     {
-        "prefix": "Event Handler: ComboBox SelectedIndexChanged",
+        "prefix": "ScriptoForm Event Handler: ComboBox SelectedIndexChanged",
         "description": "Create a ComboBox SelectedIndexChanged event handler",
         "body":
         [
@@ -87,9 +87,9 @@
         ]
     },
 
-    "Event Handler: FormMain Load":
+    "ScriptoForm Event Handler: FormMain Load":
     {
-        "prefix": "Event Handler: FormMain Load",
+        "prefix": "ScriptoForm Event Handler: FormMain Load",
         "description": "Create a FormMain Load event handler",
         "body":
         [
@@ -100,9 +100,9 @@
         ]
     },
 
-    "Event Handler: Generic":
+    "ScriptoForm Event Handler: Generic":
     {
-        "prefix": "Event Handler: Generic",
+        "prefix": "ScriptoForm Event Handler: Generic",
         "description": "Create a generic event handler",
         "body":
         [
@@ -113,9 +113,9 @@
         ]
     },
 
-    "Event Handler: Search Button Click (Native)":
+    "ScriptoForm Event Handler: Search Button Click (Native)":
     {
-        "prefix": "Event Handler: Search Button Click (Native)",
+        "prefix": "ScriptoForm Event Handler: Search Button Click (Native)",
         "description": "Create a ButtonSearch Click event handler for use with the native Active Directory search control",
         "body":
         [
@@ -128,9 +128,9 @@
         ]
     },
 
-    "Event Handler: TextBox TextChanged (Server Name)":
+    "ScriptoForm Event Handler: TextBox TextChanged (Server Name)":
     {
-        "prefix": "Event Handler: TextBox TextChanged (Server Name)",
+        "prefix": "ScriptoForm Event Handler: TextBox TextChanged (Server Name)",
         "description": "Create a TextBox TextChanged event handler (Server Name)",
         "body":
         [
@@ -156,9 +156,9 @@
         ]
     },
 
-    "Event Handler: TextBox TextChanged (General Purpose)":
+    "ScriptoForm Event Handler: TextBox TextChanged (General Purpose)":
     {
-        "prefix": "Event Handler: TextBox TextChanged (General Purpose)",
+        "prefix": "ScriptoForm Event Handler: TextBox TextChanged (General Purpose)",
         "description": "Create a TextBox TextChanged event handler (General Purpose)",
         "body":
         [
@@ -178,9 +178,9 @@
         ]
     },
 
-    "Function: Generic Advanced Function":
+    "ScriptoForm Function: Generic Advanced Function":
     {
-        "prefix": "Function: Generic Advanced Function",
+        "prefix": "ScriptoForm Function: Generic Advanced Function",
         "description": "Advanced function",
         "body":
         [
@@ -226,9 +226,9 @@
         ]
     },
 
-    "Function: Show-GetPSCredential":
+    "ScriptoForm Function: Show-GetPSCredential":
     {
-        "prefix": "Function: Show-FormGetPSCredential",
+        "prefix": "ScriptoForm Function: Show-FormGetPSCredential",
         "description": "Show-FormGetPSCredential function",
         "body":
         [
@@ -341,9 +341,9 @@
         ]
     },
 
-    "Invoke: MessageBox::Show Function":
+    "ScriptoForm Invoke: MessageBox::Show Function":
     {
-        "prefix": "Invoke: MessageBox::Show Function",
+        "prefix": "ScriptoForm Invoke: MessageBox::Show Function",
         "description": "Display a message box",
         "body":
         [
@@ -356,9 +356,9 @@
         ]
     },
 
-    "Invoke: Show-FormGetPSCredential Function":
+    "ScriptoForm Invoke: Show-FormGetPSCredential Function":
     {
-        "prefix": "Invoke: Show-FormPSCredential Function",
+        "prefix": "ScriptoForm Invoke: Show-FormPSCredential Function",
         "description": "Call the Show-FormPSCredential function",
         "body":
         [
@@ -370,9 +370,9 @@
         ]
     },
 
-    "Properties: CheckBox":
+    "ScriptoForm Properties: CheckBox":
     {
-        "prefix": "Properties: CheckBox",
+        "prefix": "ScriptoForm Properties: CheckBox",
         "description": "Assign properties to a CheckBox control",
         "body":
         [
@@ -385,9 +385,9 @@
         ]
     },
 
-    "Properties: Label & ComboBox":
+    "ScriptoForm Properties: Label & ComboBox":
     {
-        "prefix": "Properties: Label & ComboBox",
+        "prefix": "ScriptoForm Properties: Label & ComboBox",
         "description": "Assign properties to a Label and ComboBox control pair",
         "body":
         [
@@ -405,9 +405,9 @@
         ]
     },
 
-    "Properties: Label & DateTimePicker":
+    "ScriptoForm Properties: Label & DateTimePicker":
     {
-        "prefix": "Properties: Label & DateTimePicker",
+        "prefix": "ScriptoForm Properties: Label & DateTimePicker",
         "description": "Assign properties to a Label and DateTimePicker control pair",
         "body":
         [
@@ -426,9 +426,9 @@
         ]
     },
 
-    "Properties: Label & Multiline TextBox":
+    "ScriptoForm Properties: Label & Multiline TextBox":
     {
-        "prefix": "Properties: Label & Multiline-TextBox",
+        "prefix": "ScriptoForm Properties: Label & Multiline-TextBox",
         "description": "Assign properties to a Label and multiline Textbox control pair",
         "body":
         [
@@ -448,9 +448,9 @@
         ]
     },
 
-    "Properties: Label & TextBox":
+    "ScriptoForm Properties: Label & TextBox":
     {
-        "prefix": "Properties: Label & TextBox",
+        "prefix": "ScriptoForm Properties: Label & TextBox",
         "description": "Assign properties to a Label and Textbox control pair",
         "body":
         [
@@ -467,9 +467,9 @@
         ]
     },
 
-    "Properties: Label & TextBox & Search Button":
+    "ScriptoForm Properties: Label & TextBox & Search Button":
     {
-        "prefix": "Properties: Label & TextBox & Search Button",
+        "prefix": "ScriptoForm Properties: Label & TextBox & Search Button",
         "description": "Assign properties to a Label and Textbox control pair with Search Button",
         "body":
         [
