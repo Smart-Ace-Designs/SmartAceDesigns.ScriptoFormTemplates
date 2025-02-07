@@ -16,5 +16,14 @@
             "commandName": "BuildScriptoForm"
         },
         "when": "editorLangId == 'powershell'"
+    },
+    
+    {
+        "key": "alt+s",
+        "command": "PowerShell.InvokeRegisteredEditorCommand",
+        "args": {
+            "commandName": "SignScript"
+        },
+        "when": "editorLangId == 'powershell'"
     }
 ]
