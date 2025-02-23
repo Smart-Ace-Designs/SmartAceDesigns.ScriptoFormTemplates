@@ -32,7 +32,7 @@ PrivateData = @{
         
         ReleaseNotes = @'
 2025.1.1 - February 2025 Maintenance Release
-- Fix issue with output directory for .NET 9 in README fie of template
+- Fix issue with output directory for .NET 9 in README file of template
 - Remove "-nologo" option in README file of template
 
 2025.1.0 - January 2025 Release
