@@ -9,7 +9,7 @@ Generated on: 01/01/2023
 
 @{
 RootModule = 'SmartAceDesigns.ScriptoFormTemplates.psm1'
-ModuleVersion = '2025.1.0'
+ModuleVersion = '2025.1.1'
 CompatiblePSEditions = @('Desktop','Core')
 PowerShellVersion = '5.1'
 GUID = '99d484e4-d391-4b7e-a45d-1adcfbc2da5b'
@@ -31,6 +31,10 @@ PrivateData = @{
         LicenseUri = 'https://github.com/Smart-Ace-Designs/SmartAceDesigns.ScriptoFormTemplates/blob/main/LICENSE'
         
         ReleaseNotes = @'
+2025.1.1 - February 2025 Maintenance Release
+- Fix issue with output directory for .NET 9 in README fie of template
+- Remove "-nologo" option in README file of template
+
 2025.1.0 - January 2025 Release
 - Add support for PowerShell 7.5
 - Add support for Microsoft .NET 9
