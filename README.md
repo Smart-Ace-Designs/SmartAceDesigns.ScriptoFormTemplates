@@ -8,8 +8,7 @@ A **ScriptoForm** is a PowerShell script that generates and displays a [Microsof
 
 The template folder within this module contains a PlasterManifest.xml file which provides the instructions used by Plaster to generate the new **ScriptoForm Project** folders and files. Once deployed, additional code is then added to the PowerShell script by a **ScriptoForm** developer to add controls to the form and provide custom functionality.
 
-The script and optional support files that you add to a project created from the template can be compiled into an executable using the Microsoft .NET CLI utility (dotnet.exe) which is available with any [Microsoft .NET SDK](https://dotnet.microsoft.com/en-us/download/dotnet). Included in the template and deployed into your project is a Build.cs C# file which the compiler will use as the source for the executable, and a Build.csproj C# project file which provides the set of instructions used to compile the executable. The PowerShell script and any additional support files will be embedded into the executable as resources at compile time.
+The script and optional support files added to a project created from the template can be compiled into an executable using the Microsoft .NET CLI utility (dotnet.exe) which is available with any [Microsoft .NET SDK](https://dotnet.microsoft.com/en-us/download/dotnet). Included in the template folder and deployed into the project is a Build.cs C# file which the compiler will use as the source for the executable, and a Build.csproj C# project file which provides the set of instructions used to compile the executable. The PowerShell script and any additional support files will be embedded into the executable as resources at compile time.
 
 ## Additional Information
 For information on how to deploy and customize a new **ScriptoForm** please visit the official [ScriptoForm Docs](https://smartacedesigns-scriptoform-docs.netlify.app/) site.
-
