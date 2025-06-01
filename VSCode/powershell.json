@@ -74,10 +74,10 @@
         ]
     },
 
-    "ScriptoForm Event Handler: ComboBox SelectedIndexChanged":
+    "ScriptoForm Event Handler: ComboBox SelectedIndexChanged - Allman":
     {
-        "prefix": "ScriptoForm Event Handler: ComboBox SelectedIndexChanged",
-        "description": "Create a ComboBox SelectedIndexChanged event handler",
+        "prefix": "ScriptoForm Event Handler: ComboBox SelectedIndexChanged - Allman",
+        "description": "Create a ComboBox SelectedIndexChanged event handler - Allman coding style",
         "body":
         [
             "\\$ComboBox${1:Name}_SelectedIndexChanged =",
@@ -87,10 +87,22 @@
         ]
     },
 
-    "ScriptoForm Event Handler: FormMain Load":
+    "ScriptoForm Event Handler: ComboBox SelectedIndexChanged - OTB":
     {
-        "prefix": "ScriptoForm Event Handler: FormMain Load",
-        "description": "Create a FormMain Load event handler",
+        "prefix": "ScriptoForm Event Handler: ComboBox SelectedIndexChanged - OTB",
+        "description": "Create a ComboBox SelectedIndexChanged event handler - OTB coding style",
+        "body":
+        [
+            "\\$ComboBox${1:Name}_SelectedIndexChanged = {",
+            "\t$0",
+            "}"
+        ]
+    },
+
+    "ScriptoForm Event Handler: FormMain Load - Allman":
+    {
+        "prefix": "ScriptoForm Event Handler: FormMain Load - Allman",
+        "description": "Create a FormMain Load event handler - Allman coding style",
         "body":
         [
             "\\$FormMain_Load =",
@@ -100,10 +112,22 @@
         ]
     },
 
-    "ScriptoForm Event Handler: Generic":
+    "ScriptoForm Event Handler: FormMain Load - OTB":
     {
-        "prefix": "ScriptoForm Event Handler: Generic",
-        "description": "Create a generic event handler",
+        "prefix": "ScriptoForm Event Handler: FormMain Load - OTB",
+        "description": "Create a FormMain Load event handler - OTB coding style",
+        "body":
+        [
+            "\\$FormMain_Load = {",
+            "\t$0",
+            "}"
+        ]
+    },
+
+    "ScriptoForm Event Handler: Generic - Allman":
+    {
+        "prefix": "ScriptoForm Event Handler: Generic - Allman",
+        "description": "Create a generic event handler - Allman coding style",
         "body":
         [
             "${1:ControlName}_${2:EventName} =",
@@ -113,10 +137,22 @@
         ]
     },
 
-    "ScriptoForm Event Handler: Search Button Click (Native)":
+    "ScriptoForm Event Handler: Generic - OTB":
     {
-        "prefix": "ScriptoForm Event Handler: Search Button Click (Native)",
-        "description": "Create a ButtonSearch Click event handler for use with the native Active Directory search control",
+        "prefix": "ScriptoForm Event Handler: Generic - OTB",
+        "description": "Create a generic event handler - OTB coding style",
+        "body":
+        [
+            "${1:ControlName}_${2:EventName} = {",
+            "\t$0",
+            "}"
+        ]
+    },
+
+    "ScriptoForm Event Handler: Search Button Click (Native) - Allman":
+    {
+        "prefix": "ScriptoForm Event Handler: Search Button Click (Native) - Allman",
+        "description": "Create a ButtonSearch Click event handler for use with the native Active Directory search control - Allman coding style",
         "body":
         [
             "\\$ButtonSearch_Click =",
@@ -128,10 +164,24 @@
         ]
     },
 
-    "ScriptoForm Event Handler: TextBox TextChanged (Server Name)":
+    "ScriptoForm Event Handler: Search Button Click (Native) - OTB":
     {
-        "prefix": "ScriptoForm Event Handler: TextBox TextChanged (Server Name)",
-        "description": "Create a TextBox TextChanged event handler (Server Name)",
+        "prefix": "ScriptoForm Event Handler: Search Button Click (Native) - OTB",
+        "description": "Create a ButtonSearch Click event handler for use with the native Active Directory search control - OTB coding style",
+        "body":
+        [
+            "\\$ButtonSearch_Click = {",
+            "\tif (!\\$ADSearchProcess -or \\$ADSearchProcess.HasExited) { \\$Script:ADSearchProcess = Start-Process -FilePath \"Rundll32.exe\" -ArgumentList \"dsquery.dll OpenQueryWindow\" -PassThru; }",
+            "}",
+            "# Uncomment and move the following line of code to be directly after \"Invoke-Command -ScriptBlock \\$ShowFormMain\":",
+            "# $0if (\\$ADSearchProcess -and !(\\$ADSearchProcess.HasExited)) { \\$ADSearchProcess.Kill(); }"
+        ]
+    },
+
+    "ScriptoForm Event Handler: TextBox TextChanged (Server Name) - Allman":
+    {
+        "prefix": "ScriptoForm Event Handler: TextBox TextChanged (Server Name) - Allman",
+        "description": "Create a TextBox TextChanged event handler (Server Name) - Allman coding style",
         "body":
         [
             "\\$TextBox${1:Name}_TextChanged =",
@@ -156,10 +206,32 @@
         ]
     },
 
-    "ScriptoForm Event Handler: TextBox TextChanged (General Purpose)":
+    "ScriptoForm Event Handler: TextBox TextChanged (Server Name) - OTB":
     {
-        "prefix": "ScriptoForm Event Handler: TextBox TextChanged (General Purpose)",
-        "description": "Create a TextBox TextChanged event handler (General Purpose)",
+        "prefix": "ScriptoForm Event Handler: TextBox TextChanged (Server Name) - OTB",
+        "description": "Create a TextBox TextChanged event handler (Server Name) - OTB coding style",
+        "body":
+        [
+            "\\$TextBox${1:Name}_TextChanged = {",
+            "\tif (\\$TextBox${1:Name}.TextLength -eq 0) {",
+            "\t\t\\$ErrorProviderMain.Clear();",
+            "\t\t\\$ButtonRun.Enabled = \\$false;",
+            "\t} elseif (\\$TextBox${1:Name}.Text -match \"[^a-z0-9A-Z\\-]\") {",
+            "\t\t\\$ErrorProviderMain.SetIconPadding(\\$TextBox${1:Name}, -20);",
+            "\t\t\\$ErrorProviderMain.SetError(\\$TextBox${1:Name}, \"The server name contains an invalid character.\");",
+            "\t\t\\$ButtonRun.Enabled = \\$false;",
+            "\t} else {",
+            "\t\t\\$ErrorProviderMain.Clear();",
+            "\t\t\\$ButtonRun.Enabled = \\$true;",
+            "\t}",
+            "}$0"
+        ]
+    },
+
+    "ScriptoForm Event Handler: TextBox TextChanged (General Purpose) - Allman":
+    {
+        "prefix": "ScriptoForm Event Handler: TextBox TextChanged (General Purpose) - Allman",
+        "description": "Create a TextBox TextChanged event handler (General Purpose) - Allman coding style",
         "body":
         [
             "\\$TextBox${1:Name}_TextChanged =",
@@ -178,10 +250,28 @@
         ]
     },
 
-    "ScriptoForm Function: Generic Advanced Function":
+    "ScriptoForm Event Handler: TextBox TextChanged (General Purpose) - OTB":
     {
-        "prefix": "ScriptoForm Function: Generic Advanced Function",
-        "description": "Advanced function",
+        "prefix": "ScriptoForm Event Handler: TextBox TextChanged (General Purpose) - OTB",
+        "description": "Create a TextBox TextChanged event handler (General Purpose) - OTB coding style",
+        "body":
+        [
+            "\\$TextBox${1:Name}_TextChanged = {",
+            "\tif (\\$TextBox${1:Name}.TextLength -eq 0) {",
+            "\t\t\\$ErrorProviderMain.Clear();",
+            "\t\t\\$ButtonRun.Enabled = \\$false;",
+            "\t} else {",
+            "\t\t\\$ErrorProviderMain.Clear();",
+            "\t\t\\$ButtonRun.Enabled = \\$true;",
+            "\t}",
+            "}$0"
+        ]
+    },
+
+    "ScriptoForm Function: Generic Advanced Function - Allman":
+    {
+        "prefix": "ScriptoForm Function: Generic Advanced Function - Allman",
+        "description": "Advanced function - Allman coding style",
         "body":
         [
             "function ${1:Verb-Noun}",
@@ -226,10 +316,53 @@
         ]
     },
 
-    "ScriptoForm Function: Show-GetPSCredential":
+    "ScriptoForm Function: Generic Advanced Function - OTB":
     {
-        "prefix": "ScriptoForm Function: Show-FormGetPSCredential",
-        "description": "Show-FormGetPSCredential function",
+        "prefix": "ScriptoForm Function: Generic Advanced Function - OTB",
+        "description": "Advanced function - OTB coding style",
+        "body":
+        [
+            "function ${1:Verb-Noun} {",
+            "\t<#",
+            "\t.SYNOPSIS",
+            "\t\t${2:Short description}",
+            "\t.DESCRIPTION",
+            "\t\t${3:Long description}",
+            "\t.PARAMETER ${4:StringParameter}",
+            "\t\t${5:Parameter description}",
+            "\t.PARAMETER ${6:IntParameter}",
+            "\t\t${7:Parameter description}",
+            "\t.EXAMPLE",
+            "\t\t${8:Example #1}",
+            "\t.EXAMPLE",
+            "\t\t${9:Example #2}",
+            "\t#>",
+            "\r",
+            "\t[CmdletBinding(SupportsShouldProcess)]",
+            "\tParam (",
+            "\t\t[Parameter(Mandatory = \\$true, Position = 0)] [string]\\$${4:StringParameter},",
+            "\t\t[Parameter(Mandatory = \\$true, Position = 1)] [int]\\$${6:IntParameter}",
+            "\t)",
+            "\r",
+            "\tBegin {",
+            "\t\t$0",
+            "\t}",
+            "\r",
+            "\tProcess {",
+            "\t\tif (\\$PSCmdlet.ShouldProcess('Target', 'Operation')) {",
+            "\t\t}",
+            "\t}",
+            "\r",
+            "\tEnd {",
+            "\t}",
+            "}"
+        ]
+    },
+
+    "ScriptoForm Function: Show-GetPSCredential - Allman":
+    {
+        "prefix": "ScriptoForm Function: Show-FormGetPSCredential - Allman",
+        "description": "Show-FormGetPSCredential function - Allman coding style",
         "body":
         [
             "function Show-FormGetPSCredential",
@@ -341,6 +474,61 @@
         ]
     },
 
+    "ScriptoForm Function: Show-GetPSCredential - OTB":
+    {
+        "prefix": "ScriptoForm Function: Show-FormGetPSCredential - OTB",
+        "description": "Show-FormGetPSCredential function - OTB coding style",
+        "body":
+        [
+            "function Show-FormGetPSCredential {",
+            "\tparam (",
+            "\t\t[Parameter(Mandatory = \\$false, Position = 0)] [string]\\$UserName,",
+            "\t\t[Parameter(Mandatory = \\$false, Position = 1)] [string]\\$Caption = \"User Credentials\"",
+            "\t)",
+            "\r",
+            "\tAdd-Type -AssemblyName System.Windows.Forms;",
+            "\t[System.Windows.Forms.Application]::EnableVisualStyles();",
+            "\r",
+            "\t\\$FormGetPSCredential = New-Object -TypeName System.Windows.Forms.Form;",
+            "\t\\$GroupBoxMain = New-Object -TypeName System.Windows.Forms.GroupBox;",
+            "\t\\$LabelUserName = New-Object -TypeName System.Windows.Forms.Label;",
+            "\t\\$TextBoxUserName = New-Object -TypeName System.Windows.Forms.TextBox;",
+            "\t\\$LabelPassword = New-Object -TypeName System.Windows.Forms.Label;",
+            "\t\\$TextBoxPassword = New-Object -TypeName System.Windows.Forms.TextBox;",
+            "\t\\$ButtonOK = New-Object -TypeName System.Windows.Forms.Button;",
+            "\t\\$ButtonCancel = New-Object -TypeName System.Windows.Forms.Button;",
+            "\r",
+            "\t\\$FormGetPSCredential.Text = \\$Caption;",
+            "\t\\$FormGetPSCredential.ClientSize = New-Object -TypeName System.Drawing.Size(330, 145);",
+            "\t\\$FormGetPSCredential.Font = New-Object -TypeName System.Drawing.Font(\"MS Sans Serif\", 8);",
+            "\t\\$FormGetPSCredential.StartPosition = [System.Windows.Forms.FormStartPosition]::CenterScreen;",
+            "\t\\$FormGetPSCredential.FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::FixedToolWindow;",
+            "\t\\$FormGetPSCredential.TopMost = \\$true;",
+            "\t\\$FormGetPSCredential.ShowInTaskbar = \\$false;",
+            "\t\\$FormGetPSCredential.ControlBox = \\$false;",
+            "\t\\$FormGetPSCredential.AcceptButton = \\$ButtonOK;",
+            "\t\\$FormGetPSCredential.CancelButton = \\$ButtonCancel;",
+            "\r",
+            "\t\\$GroupBoxMain.Location = New-Object -TypeName System.Drawing.Point(10, 5);",
+            "\t\\$GroupBoxMain.Size = New-Object -TypeName System.Drawing.Size(310, 90);",
+            "\t\\$FormGetPSCredential.Controls.Add(\\$GroupBoxMain);",
+            "\r",
+            "\tif (\\$UserName) {",
+            "\t\t\\$FormGetPSCredential.ActiveControl = \\$TextBoxPassword;",
+            "\t\t\\$TextBoxPassword.Enabled = \\$true;",
+            "\t}",
+            "\tif (\\$FormGetPSCredential.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK) {",
+            "\t\t\\$UserName = \\$TextBoxUserName.Text;",
+            "\t\t\\$Password = ConvertTo-SecureString -String \\$TextBoxPassword.Text -AsPlainText -Force;",
+            "\t\t\\$Credential = New-Object -TypeName System.Management.Automation.PSCredential(\\$UserName, \\$Password);",
+            "\t\tRemove-Variable -Name Password;",
+            "\t\t\\$Credential;",
+            "\t}",
+            "\t\\$FormGetPSCredential.Dispose();",
+            "}$0"
+        ]
+    },
+
     "ScriptoForm Invoke: MessageBox::Show Function":
     {
         "prefix": "ScriptoForm Invoke: MessageBox::Show Function",
@@ -356,14 +544,27 @@
         ]
     },
 
-    "ScriptoForm Invoke: Show-FormGetPSCredential Function":
+    "ScriptoForm Invoke: Show-FormGetPSCredential Function (Allman)":
     {
-        "prefix": "ScriptoForm Invoke: Show-FormPSCredential Function",
-        "description": "Call the Show-FormPSCredential function",
+        "prefix": "ScriptoForm Invoke: Show-FormPSCredential Function (Allman)",
+        "description": "Call the Show-FormPSCredential function (Allman coding style)",
         "body":
         [
             "if (\\$Credential = Show-FormGetPSCredential -UserName \\$env:USERNAME)",
             "{",
+            "\t${1:# Add action here...}",
+            "\tRemove-Variable -Name Credential",
+            "}$0"
+        ]
+    },
+
+    "ScriptoForm Invoke: Show-FormGetPSCredential Function (OTB)":
+    {
+        "prefix": "ScriptoForm Invoke: Show-FormPSCredential Function (OTB)",
+        "description": "Call the Show-FormPSCredential function (OTB coding style)",
+        "body":
+        [
+            "if (\\$Credential = Show-FormGetPSCredential -UserName \\$env:USERNAME) {",
             "\t${1:# Add action here...}",
             "\tRemove-Variable -Name Credential",
             "}$0"

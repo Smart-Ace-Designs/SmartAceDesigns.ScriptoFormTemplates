@@ -10,7 +10,7 @@ Notes:
 
 #region Settings
 <#
-Add global settings here, using SCREAMING_SNAKE_CASE to indicate constants that should not be changed at runtime...
+Add global settings here...
 #>
 $SUPPORT_CONTACT = "<%= $PLASTER_PARAM_Author %>"
 #endregion
@@ -39,8 +39,7 @@ Instantiate component objects here...
 #endregion
 
 #region Forms
-$ShowFormMain =
-{
+$ShowFormMain = {
     $FormWidth = 330
     $FormHeight = <%= $PLASTER_PARAM_FormHeight %>
 
@@ -99,8 +98,7 @@ Add function definitions here...
 #endregion
 
 #region Handlers
-$FormMain_Shown =
-{
+$FormMain_Shown = {
     $ToolStripStatusLabelMain.Text = "Ready"
     $StatusStripMain.Update()
     $FormMain.Activate()
@@ -110,21 +108,17 @@ $FormMain_Shown =
 Add event handlers here...
 #>
 
-$ButtonRun_Click =
-{
+$ButtonRun_Click = {
     $ToolStripStatusLabelMain.Text = "Working...please wait"
     $FormMain.Controls | Where-Object {$PSItem -isnot [System.Windows.Forms.StatusStrip]} | ForEach-Object {$PSItem.Enabled = $false}
     $FormMain.Cursor = [System.Windows.Forms.Cursors]::WaitCursor
     [System.Windows.Forms.Application]::DoEvents()
 
-    try
-    {
+    try {
         <#
         Do work here...
         #>
-    }
-    catch
-    {
+    } catch {
         <#
         Add custom exception handling here...
         #>

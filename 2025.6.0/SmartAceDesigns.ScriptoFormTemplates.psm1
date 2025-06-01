@@ -15,7 +15,7 @@ function New-SADScriptoFormProject
     Generates a new ScriptoForm project from a custom template using the Plaster PowerShell module.
 
     .DESCRIPTION
-    This function generates a new ScriptoForm project based on a custom template.  A ScriptoForm is a PowerShell script that generates and displays a Microsoft WinForms application that can be used for a specific management or system administration task in a computer network environment. Typically, a ScriptoForm is compiled into an executable file which hides the PowerShell console window during execution and provides a more seamless and familiar experience to the user.
+    This function generates a new ScriptoForm project based on a custom template. A ScriptoForm is a PowerShell script that generates and displays a Microsoft WinForms application that can be used for a specific management or system administration task in a computer network environment. Typically, a ScriptoForm is compiled into an executable file which hides the PowerShell console window during execution and provides a more seamless and familiar experience to the user.
     
     A ScriptoForm project is the set of files and folders including the PowerShell script, typically stored in a GIT repository, that are used to compile the executable file using the Microsoft .NET CLI utility (dotnet.exe) which is available with any Microsoft .NET SDK. The ScriptoForm project includes a C# file which the compiler will use as the source for the executable, and a C# project file (csproj file) which provides the set of instructions used to compile the executable.
     
@@ -32,20 +32,29 @@ function New-SADScriptoFormProject
     If Visual Studio Code is installed, it will be opened to the new project directory location after the directory structure is created.
 
     .PARAMETER Size
-    Specifies the initial size of the ScriptoForm to generate.  The following pre-configred sizes are available to select:
+    Specifies the initial size of the ScriptoForm to generate. The following pre-configred sizes are available to select:
 
     Large:       Used to build a general purpose ScriptoForm using a large sized form
     Medium:      Used to build a general purpose ScriptoForm using a medium sized form
     Small:       Used to build a general purpose ScriptoForm using a small sized form
 
     .PARAMETER DestinationPath
-    Specifies the root destination path of the new ScriptoForm project directory.  A directory, using the value of the "Name" parameter, will be created under this path to hold the project files.
+    Specifies the root destination path of the new ScriptoForm project directory. A directory, using the value of the "Name" parameter, will be created under this path to hold the project files.
 
     .PARAMETER Name
-    Specifies the name of PowerShell script as well as the name of the project directory.  As a best practice, this name should describe what the script does in VERB-NOUN format.  The name will be substituted into various locations within the project such as the Readme.md file and the comments section of the PowerShell script.
+    Specifies the name of PowerShell script as well as the name of the project directory. As a best practice, this name should describe what the script does in VERB-NOUN format. The name will be substituted into various locations within the project such as the Readme.md file and the comments section of the PowerShell script.
+
+    .PARAMETER CodingStyleTemplate
+    Specifies the coding style template to use as the source. The following pre-configred templates are available to select:
+
+    Allman:
+    This template is based on the Allman coding style in which every braceable statement has the opening and closing brace at the beginning of a line.
+    
+    OTB:
+    This template is based on the One True Brace (OTB) coding style in which every braceable statement has the opening brace on the end of a line, and the closing brace at the beginning of a line.
 
     .PARAMETER Author
-    Specifies the ScriptoForm author that will be substituted into the comments section of the PowerShell script.  By default this parameter will be set to the Git user name or the current user login name if Git is not installed.
+    Specifies the ScriptoForm author that will be substituted into the comments section of the PowerShell script. By default this parameter will be set to the Git user name or the current user login name if Git is not installed.
 
     .PARAMETER NoLogo
     Specifies if the Plaster logo is shown during function execution.
@@ -55,7 +64,7 @@ function New-SADScriptoFormProject
 
     Description
     -----------
-    Deploys a new small sized ScriptoForm project named "Show-SmallForm" on the users desktop in the "Show-SmallForm" directory.  If Git is installed, the Git user name will be used as the author name in the project.
+    Deploys a new small sized ScriptoForm project named "Show-SmallForm" on the users desktop in the "Show-SmallForm" directory. If Git is installed, the Git user name will be used as the author name in the project.
     If Git is not installed, the current user login name will be used instead.
 
     .EXAMPLE
@@ -63,7 +72,7 @@ function New-SADScriptoFormProject
 
     Description
     -----------
-    Deploys a new medium sized ScriptoForm project named "Show-MediumForm" on the users desktop in the "Show-MediumForm" directory.  If Git is installed, the Git user name will be used as the author name in the project.
+    Deploys a new medium sized ScriptoForm project named "Show-MediumForm" on the users desktop in the "Show-MediumForm" directory. If Git is installed, the Git user name will be used as the author name in the project.
     If Git is not installed, the current user login name will be used instead.
 
     .LINK
@@ -76,8 +85,9 @@ function New-SADScriptoFormProject
         [Parameter(Mandatory = $false, Position = 0)] [ValidateSet("Small","Medium","Large")] [string]$Size = "Medium",
         [Parameter(Mandatory = $false, Position = 1)] [string]$DestinationPath = "$HOME\Desktop",
         [Parameter(Mandatory = $false, Position = 2)] [string]$Name = "Show-DemoForm",
-        [Parameter(Mandatory = $false, Position = 3)] [string]$Author,
-        [Parameter(Mandatory = $false, Position = 4)] [switch]$NoLogo
+        [Parameter(Mandatory = $false, Position = 3)] [ValidateSet("Allman","OTB")] [string]$CodingStyleTemplate = "Allman",
+        [Parameter(Mandatory = $false, Position = 4)] [string]$Author,
+        [Parameter(Mandatory = $false, Position = 5)] [switch]$NoLogo
     )
 
     if (!$Author)
@@ -97,7 +107,7 @@ function New-SADScriptoFormProject
     }
 
     $PlasterParameters = @{
-        TemplatePath = "$PSScriptRoot\Templates\General"
+        TemplatePath = "$PSScriptRoot\Templates\$CodingStyleTemplate"
         DestinationPath = "$DestinationPath\$Name"
         Name = $Name
         Author = $Author
@@ -132,7 +142,7 @@ function Build-SADScriptoFormExecutable
     - Searches the current working directory for compiled executable files and digitally signs each one found if an appropriate code-signing certificate is available.
 
     .PARAMETER BuildTarget
-    Specifies the .NET target framework to use for build the executable(s).  Selecting "All" (the default value) will compile the an executable for all available frameworks.
+    Specifies the .NET target framework to use for build the executable(s). Selecting "All" (the default value) will compile the an executable for all available frameworks.
     
     .PARAMETER BuildFolder
     Specifies the path to the Microsoft .NET build files.
@@ -207,7 +217,7 @@ function Build-SADScriptoFormExecutable
     else
     {
         Clear-Host
-        Write-Warning -Message "The Microsoft.NET SDK is not installed.  Operation has been cancelled."
+        Write-Warning -Message "The Microsoft.NET SDK is not installed. Operation has been cancelled."
         break
     }
 
@@ -257,7 +267,7 @@ function Build-SADScriptoFormExecutable
     }
     else
     {
-        Write-Warning -Message "The build files could could not be found.  Operation has been cancelled."
+        Write-Warning -Message "The build files could could not be found. Operation has been cancelled."
         break
     }
     

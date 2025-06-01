@@ -3,10 +3,10 @@
   schemaVersion='1.1'
   templateType='Project' xmlns='http://www.microsoft.com/schemas/PowerShell/Plaster/v1'>
   <metadata>
-    <name>General</name>
+    <name>Allman</name>
     <id>a562f40e-2572-420d-abba-eec90fa8ec46</id>
     <version>1.0.0</version>
-    <title>General ScriptoForm Template</title>
+    <title>General ScriptoForm Template (Allman Style)</title>
     <description>Provides a set of default files that can be used to create a starter ScriptoForm used for network management purposes.</description>
     <author>Smart Ace Designs</author>
     <tags>General</tags>

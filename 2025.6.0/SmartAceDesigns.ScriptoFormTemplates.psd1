@@ -9,7 +9,7 @@ Generated on: 01/01/2023
 
 @{
 RootModule = 'SmartAceDesigns.ScriptoFormTemplates.psm1'
-ModuleVersion = '2025.1.1'
+ModuleVersion = '2025.6.0'
 CompatiblePSEditions = @('Desktop','Core')
 PowerShellVersion = '5.1'
 GUID = '99d484e4-d391-4b7e-a45d-1adcfbc2da5b'
@@ -17,7 +17,7 @@ Author = 'Smart Ace Designs'
 CompanyName = 'Smart Ace Designs'
 Copyright = '(c) 2025 Smart Ace Designs. All rights reserved.'
 Description = @'
-Smart Ace Designs ScriptoForm Templates Module.  This module contains a Plaster template and functions used for scaffolding a basic starter ScriptoForm project that a script developer can use to create complex management tools.
+Smart Ace Designs ScriptoForm Templates Module. This module contains a Plaster template and functions used for scaffolding a basic starter ScriptoForm project that a script developer can use to create complex management tools.
 
 A ScriptoForm is a PowerShell script that generates and displays a Microsoft Windows Forms application that can be used for a specific management or system administration task in a computer network environment.
 Typically, a ScriptoForm is compiled into an executable file which hides the PowerShell console window during execution and provides a more seamless and familiar experience to the user.
@@ -31,6 +31,12 @@ PrivateData = @{
         LicenseUri = 'https://github.com/Smart-Ace-Designs/SmartAceDesigns.ScriptoFormTemplates/blob/main/LICENSE'
         
         ReleaseNotes = @'
+2025.6.0 - June 2025 Release
+- Add template for OTB coding style
+- Rename "General" template to "Allman" to indicate the coding style it uses
+- Add parameter to the "New-SADScriptoFormProject" function to allow selection of the coding style template
+- Add OTB style snippets to "powershell.json" file
+
 2025.1.1 - February 2025 Maintenance Release
 - Fix issue with output directory for .NET 9 in README file of template
 - Remove "-nologo" option in README file of template
