@@ -9,13 +9,13 @@ Generated on: 01/01/2023
 
 @{
 RootModule = 'SmartAceDesigns.ScriptoFormTemplates.psm1'
-ModuleVersion = '2025.6.0'
+ModuleVersion = '2026.1.0'
 CompatiblePSEditions = @('Desktop','Core')
 PowerShellVersion = '5.1'
 GUID = '99d484e4-d391-4b7e-a45d-1adcfbc2da5b'
 Author = 'Smart Ace Designs'
 CompanyName = 'Smart Ace Designs'
-Copyright = '(c) 2025 Smart Ace Designs. All rights reserved.'
+Copyright = '(c) 2026 Smart Ace Designs. All rights reserved.'
 Description = @'
 Smart Ace Designs ScriptoForm Templates Module. This module contains a Plaster template and functions used for scaffolding a basic starter ScriptoForm project that a script developer can use to create complex management tools.
 
@@ -31,43 +31,47 @@ PrivateData = @{
         LicenseUri = 'https://github.com/Smart-Ace-Designs/SmartAceDesigns.ScriptoFormTemplates/blob/main/LICENSE'
         
         ReleaseNotes = @'
+2026.1.0 - January 2026 Release
+- Adds support for Microsoft .NET 10
+- Moves Microsoft .NET 8 to LTS legacy mode
+
 2025.6.0 - June 2025 Release
-- Add template for OTB coding style
-- Rename "General" template to "Allman" to indicate the coding style it uses
-- Add parameter to the "New-SADScriptoFormProject" function to allow selection of the coding style template
-- Add OTB style snippets to "powershell.json" file
+- Adds template for OTB coding style
+- Renames "General" template to "Allman" to indicate the coding style it uses
+- Adds parameter to the "New-SADScriptoFormProject" function to allow selection of the coding style template
+- Adds OTB style snippets to "powershell.json" file
 
 2025.1.1 - February 2025 Maintenance Release
-- Fix issue with output directory for .NET 9 in README file of template
-- Remove "-nologo" option in README file of template
+- Fixes issue with output directory for .NET 9 in README file of template
+- Removes "-nologo" option in README file of template
 
 2025.1.0 - January 2025 Release
-- Add support for PowerShell 7.5
-- Add support for Microsoft .NET 9
-- Remove support for PowerShell 7.2 (End of support: November 8, 2024)
-- Remove support for Microsoft .NET 6 (End of support: November 12, 2024)
-- Remove double-space after sentences in markdown files
+- Adds support for PowerShell 7.5
+- Adds support for Microsoft .NET 9
+- Removes support for PowerShell 7.2 (End of support: November 8, 2024)
+- Removes support for Microsoft .NET 6 (End of support: November 12, 2024)
+- Removes double-space after sentences in markdown files
 - Converts template to use SCREAMING_SNAKE_CASE naming convention for settings (aka constants)
 
 2024.6.1 - January 2025 Maintenance Release
-- Fix issue with .gitignore file being excluded from PowerShell Gallery
+- Fixes issue with .gitignore file being excluded from PowerShell Gallery
 
 2024.6.0 - June 2024 Release
-- Remove support for PowerShell 7.3 (End of support: May 8, 2024)
-- Remove support for Microsoft .NET 7 (End of support: May 28, 2024)
+- Removes support for PowerShell 7.3 (End of support: May 8, 2024)
+- Removes support for Microsoft .NET 7 (End of support: May 28, 2024)
 
 2023.12.0 - December 2023 Release
-- Add support for PowerShell 7.4
-- Add support for Microsoft .NET 8
-- Modify output location for Microsoft .NET 6
-- Rename README files to match industry standards (uppercase)
+- Adds support for PowerShell 7.4
+- Adds support for Microsoft .NET 8
+- Modifies output location for Microsoft .NET 6
+- Renames README files to match industry standards (uppercase)
 
 2023.7.0 - July 2023 Release
-- Set mouse to WaitCursor while work is being performed
+- Sets mouse to WaitCursor while work is being performed
 - Minor white space cleanup in README file
-- Fix terminology used in the module manifest file
-- Fix description in the module manifest file
-- Add release notes to the module manifest file
+- Fixes terminology used in the module manifest file
+- Fixes description in the module manifest file
+- Adds release notes to the module manifest file
  
 2023.6.0 - June 2023 Release
 - Initial release

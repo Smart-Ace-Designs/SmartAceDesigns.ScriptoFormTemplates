@@ -4,7 +4,8 @@ Module: SmartAceDesigns.ScriptoFormTemplates
 Author: Smart Ace Designs
 
 Notes:
-This module provides a method for generating a new ScriptoForm project from a custom template using Plaster.
+This module provides a function for generating a new ScriptoForm project from a custom template using Plaster.
+This module provides a function for compiling a ScriptoForm project into an executable.
 ============================================================================================================================
 #>
 
@@ -121,7 +122,7 @@ function New-SADScriptoFormProject
     Set-Location -Path $DestinationPath\$Name
     if (Get-Command code -ErrorAction SilentlyContinue)
     {
-        code $DestinationPath\$Name --profile "Default"
+        code $DestinationPath\$Name
     }
     else
     {
@@ -187,7 +188,7 @@ function Build-SADScriptoFormExecutable
     [CmdletBinding()]
     Param
     (
-        [Parameter(Mandatory = $false, Position = 0)] [ValidateSet("All","Legacy","LTS","STS")] [string]$BuildTarget = "All",
+        [Parameter(Mandatory = $false, Position = 0)] [ValidateSet("All","Legacy","LTS-Legacy","STS","LTS")] [string]$BuildTarget = "All",
         [Parameter(Mandatory = $false, Position = 1)] [string]$BuildFolder = "Build",
         [Parameter(Mandatory = $false, Position = 2)] [string]$CertificateFriendlyName = "PowerShell",
         [Parameter(Mandatory = $false, Position = 3)] [string]$CLI = "dotnet.exe",
@@ -199,8 +200,9 @@ function Build-SADScriptoFormExecutable
     if (Get-Command -Name $CLI -ErrorAction SilentlyContinue)
     {
         $Frameworks = @([PSCustomObject]@{Name = "Legacy";Version = "net48";Enabled=$false},
-                        [PSCustomObject]@{Name = "LTS";Version = "net8.0-windows";Enabled=$false},
-                        [PSCustomObject]@{Name = "STS";Version = "net9.0-windows";Enabled=$false})
+                        [PSCustomObject]@{Name = "LTS-Legacy";Version = "net8.0-windows";Enabled=$false},
+                        [PSCustomObject]@{Name = "STS";Version = "net9.0-windows";Enabled=$false},
+                        [PSCustomObject]@{Name = "LTS";Version = "net10.0-windows";Enabled=$false})
     
         if ($BuildTarget -eq "All")
         {

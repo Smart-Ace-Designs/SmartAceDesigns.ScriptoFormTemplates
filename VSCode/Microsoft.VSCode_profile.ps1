@@ -13,8 +13,9 @@ $BuildFolder = "Build"
 $CertificateFriendlyName = "PowerShell"
 $CLI = "C:\Program Files\dotnet\dotnet.exe"
 $Frameworks = @([PSCustomObject]@{Name = "Legacy";Version = "net48";Enabled=$true},
-                [PSCustomObject]@{Name = "LTS";Version = "net8.0-windows";Enabled=$true},
-                [PSCustomObject]@{Name = "STS";Version = "net9.0-windows";Enabled=$true})
+                [PSCustomObject]@{Name = "LTS-Legacy";Version = "net8.0-windows";Enabled=$true},
+                [PSCustomObject]@{Name = "STS";Version = "net9.0-windows";Enabled=$true},
+                [PSCustomObject]@{Name = "LTS";Version = "net10.0-windows";Enabled=$true})
 $ProjectFileName = "Build.csproj"
 $ReleaseFolder = "Release"
 $TimeStampServer = "http://timestamp.digicert.com"
@@ -84,9 +85,9 @@ if (Test-Path -Path $CLI)
         if (Test-Path $BuildFolder\$ProjectFileName)
         {
             Set-Location $BuildFolder
-            Write-Host "Building .NET assembly" -ForegroundColor Green
-            (Start-Process -FilePath $CLI -ArgumentList "publish -f net9.0-windows -v q -nologo -o ..\$ReleaseFolder" -PassThru -WindowStyle Hidden).WaitForExit()
-            (Start-Process -FilePath $CLI -ArgumentList "clean -f net9.0-windows -v q -nologo" -PassThru -WindowStyle Hidden).WaitForExit()
+            Write-Host "Building .NET LTS assembly" -ForegroundColor Green
+            (Start-Process -FilePath $CLI -ArgumentList "publish -f net10.0-windows -v q -nologo -o ..\$ReleaseFolder" -PassThru -WindowStyle Hidden).WaitForExit()
+            (Start-Process -FilePath $CLI -ArgumentList "clean -f net10.0-windows -v q -nologo" -PassThru -WindowStyle Hidden).WaitForExit()
             
 
             if ($SigningCertificate)
