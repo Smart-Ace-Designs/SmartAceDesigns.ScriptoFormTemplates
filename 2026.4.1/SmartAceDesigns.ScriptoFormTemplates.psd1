@@ -9,7 +9,7 @@ Generated on: 01/01/2023
 
 @{
 RootModule = 'SmartAceDesigns.ScriptoFormTemplates.psm1'
-ModuleVersion = '2026.4.0'
+ModuleVersion = '2026.4.1'
 CompatiblePSEditions = @('Desktop','Core')
 PowerShellVersion = '5.1'
 GUID = '99d484e4-d391-4b7e-a45d-1adcfbc2da5b'
@@ -31,6 +31,9 @@ PrivateData = @{
         LicenseUri = 'https://github.com/Smart-Ace-Designs/SmartAceDesigns.ScriptoFormTemplates/blob/main/LICENSE'
         
         ReleaseNotes = @'
+2026.4.1 - April 2026 Maintenance Release
+- Fixes OTB formatting for form action wrapper function
+
 2026.4.0 - April 2026 Release
 - Adds support for PowerShell 7.6
 - Adds form action wrapper function to facilitate code reuse
