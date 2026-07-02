@@ -9,7 +9,7 @@ Generated on: 01/01/2023
 
 @{
 RootModule = 'SmartAceDesigns.ScriptoFormTemplates.psm1'
-ModuleVersion = '2026.4.1'
+ModuleVersion = '2026.7.0'
 CompatiblePSEditions = @('Desktop','Core')
 PowerShellVersion = '5.1'
 GUID = '99d484e4-d391-4b7e-a45d-1adcfbc2da5b'
@@ -31,6 +31,10 @@ PrivateData = @{
         LicenseUri = 'https://github.com/Smart-Ace-Designs/SmartAceDesigns.ScriptoFormTemplates/blob/main/LICENSE'
         
         ReleaseNotes = @'
+2026.7.0 - July 2026 Release
+- BREAKING CHANGE: Requires the Plaster 2 PowerShell module
+- BREAKING CHANGE: Converts project to use Plaster 2 JSON manifest format
+
 2026.4.1 - April 2026 Maintenance Release
 - Fixes OTB formatting for form action wrapper function
 
@@ -98,14 +102,14 @@ PrivateData = @{
         Extensions = @(
             @{
                 Module = 'Plaster'
-                MinimumVersion = '1.1.4'
-                Details = @{TemplatePaths = @('$PSScriptRoot\Templates\General')}
+                MinimumVersion = '2.1.3'
+                Details = @{TemplatePaths = @('$PSScriptRoot\Templates\Allman', '$PSScriptRoot\Templates\OTB')}
              }
         )
     }
 }
 
-RequiredModules = @(@{ModuleName = 'Plaster';ModuleVersion = '1.1.4'})
+RequiredModules = @(@{ModuleName = 'Plaster';ModuleVersion = '2.1.3'})
 
 FunctionsToExport = @('New-SADScriptoFormProject','Build-SADScriptoFormExecutable')
 CmdletsToExport = '*'
