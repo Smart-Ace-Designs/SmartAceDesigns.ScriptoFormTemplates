@@ -2,7 +2,7 @@
 
 This repository contains the source code for the [SmartAceDesigns.ScriptoFormTemplates](https://www.powershellgallery.com/packages/SmartAceDesigns.ScriptoFormTemplates) PowerShell module hosted in the PowerShell Gallery. The module contains a [PowerShell Plaster](https://www.powershellgallery.com/packages/Plaster) template and PowerShell function that can be used to create a new **ScriptoForm Project** as well as a PowerShell function that can be used to compile a **ScriptoForm** into an executable file.
 
-https://github.com/Smart-Ace-Designs/SmartAceDesigns.ScriptoFormTemplates/assets/132539186/6a72ddef-d11d-444f-b7c2-7e0657f6cdb4
+https://github.com/user-attachments/assets/caf7cb7c-8ced-4de7-8b28-d9dbc34e164d
 
 ## ScriptoForm Overview
 
