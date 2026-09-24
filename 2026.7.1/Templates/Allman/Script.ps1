@@ -84,7 +84,7 @@ $ShowFormMain =
     $FormMain.Controls.Add($StatusStripMain)
 
     <#
-    Assign component properties and event handlers here and add to the Form...
+    Assign component properties and event handlers here...
     #>
 
     [void]$FormMain.ShowDialog()

@@ -9,7 +9,7 @@ Generated on: 01/01/2023
 
 @{
 RootModule = 'SmartAceDesigns.ScriptoFormTemplates.psm1'
-ModuleVersion = '2026.7.0'
+ModuleVersion = '2026.7.1'
 CompatiblePSEditions = @('Desktop','Core')
 PowerShellVersion = '5.1'
 GUID = '99d484e4-d391-4b7e-a45d-1adcfbc2da5b'
@@ -31,6 +31,12 @@ PrivateData = @{
         LicenseUri = 'https://github.com/Smart-Ace-Designs/SmartAceDesigns.ScriptoFormTemplates/blob/main/LICENSE'
         
         ReleaseNotes = @'
+2026.7.1 - September 2026 Maintenance Release
+- Converts PowerShell related files from LF to CRLF
+- Cleans up Plaster 2 manifest file
+- Fixes invalid schema URL in Plaster 2 manifest file
+- Fixes several minor grammer issues
+
 2026.7.0 - July 2026 Release
 - BREAKING CHANGE: Requires the Plaster 2 PowerShell module
 - BREAKING CHANGE: Converts project to use Plaster 2 JSON manifest format

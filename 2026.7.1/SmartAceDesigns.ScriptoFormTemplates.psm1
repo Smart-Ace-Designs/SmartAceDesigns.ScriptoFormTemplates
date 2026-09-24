@@ -43,7 +43,7 @@ function New-SADScriptoFormProject
     Specifies the root destination path of the new ScriptoForm project directory. A directory, using the value of the "Name" parameter, will be created under this path to hold the project files.
 
     .PARAMETER Name
-    Specifies the name of PowerShell script as well as the name of the project directory. As a best practice, this name should describe what the script does in VERB-NOUN format. The name will be substituted into various locations within the project such as the Readme.md file and the comments section of the PowerShell script.
+    Specifies the name of PowerShell script as well as the name of the project directory. As a best practice, this name should describe what the script does in VERB-NOUN format. The name will be substituted into various locations within the project such as the README.md file and the comments section of the PowerShell script.
 
     .PARAMETER CodingStyleTemplate
     Specifies the coding style template to use as the source. The following pre-configred templates are available to select:

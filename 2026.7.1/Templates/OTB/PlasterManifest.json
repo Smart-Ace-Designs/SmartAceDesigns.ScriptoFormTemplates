@@ -1,0 +1,82 @@
+{
+  "$schema": "https://raw.githubusercontent.com/PowerShellOrg/Plaster/main/Plaster/Schema/plaster-manifest-v2.json",
+  "schemaVersion": "2.0",
+  "metadata": {
+    "name": "OTB",
+    "id": "a562f40e-2572-420d-abba-eec90fa8ec46",
+    "version": "2.0.0",
+    "title": "ScriptoForm Template (OTB Style)",
+    "description": "Provides a set of default files that can be used to create a new ScriptoForm project.",
+    "author": "Smart Ace Designs",
+    "tags": ["OTB"],
+    "templateType": "Project"
+  },
+  "parameters": [
+    {
+      "name": "Name",
+      "type": "text",
+      "prompt": "Name"
+    },
+    {
+      "name": "Author",
+      "type": "user-fullname",
+      "prompt": "Author"
+    },
+    {
+      "name": "FormHeight",
+      "type": "text",
+      "prompt": "FormHeight"
+    }
+  ],
+  "content": [
+    {
+      "type": "message",
+      "text": "Creating build folder..."
+    },
+    {
+      "type": "directory",
+      "destination": "Build"
+    },
+    {
+      "type": "message",
+      "text": "Creating default script file..."
+    },
+    {
+      "type": "templateFile",
+      "source": "Script.ps1",
+      "destination": "${Name}.ps1"
+    },
+    {
+      "type": "message",
+      "text": "Creating default readme file..."
+    },
+    {
+      "type": "templateFile",
+      "source": "README.md",
+      "destination": "README.md"
+    },
+    {
+      "type": "message",
+      "text": "Creating default gitignore file..."
+    },
+    {
+      "type": "file",
+      "source": ".gitignore.example",
+      "destination": ".gitignore"
+    },
+    {
+      "type": "message",
+      "text": "Creating default build files..."
+    },
+    {
+      "type": "file",
+      "source": "Build\\Build.cs",
+      "destination": "Build\\Build.cs"
+    },
+    {
+      "type": "templateFile",
+      "source": "Build\\Build.csproj",
+      "destination": "Build\\Build.csproj"
+    }
+  ]
+}
