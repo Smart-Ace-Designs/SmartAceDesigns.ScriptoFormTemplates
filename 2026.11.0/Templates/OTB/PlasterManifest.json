@@ -52,7 +52,7 @@
     },
     {
       "type": "templateFile",
-      "source": "README.md",
+      "source": "..\\Common\\README.md",
       "destination": "README.md"
     },
     {
@@ -61,7 +61,7 @@
     },
     {
       "type": "file",
-      "source": ".gitignore.example",
+      "source": "..\\Common\\.gitignore.example",
       "destination": ".gitignore"
     },
     {
@@ -70,12 +70,12 @@
     },
     {
       "type": "file",
-      "source": "Build\\Build.cs",
+      "source": "..\\Common\\Build\\Build.cs",
       "destination": "Build\\Build.cs"
     },
     {
       "type": "templateFile",
-      "source": "Build\\Build.csproj",
+      "source": "..\\Common\\Build\\Build.csproj",
       "destination": "Build\\Build.csproj"
     }
   ]

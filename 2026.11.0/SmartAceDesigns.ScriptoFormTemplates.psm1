@@ -117,6 +117,7 @@ function New-SADScriptoFormProject
     }
 
     Clear-Host
+    if ($NoLogo) {Write-Host "`nScriptoForm Deployment: $($Name)`n"}
     Invoke-Plaster @PlasterParameters
 
     Set-Location -Path $DestinationPath\$Name
@@ -188,7 +189,7 @@ function Build-SADScriptoFormExecutable
     [CmdletBinding()]
     Param
     (
-        [Parameter(Mandatory = $false, Position = 0)] [ValidateSet("All","Legacy","LTS-Legacy","STS","LTS")] [string]$BuildTarget = "All",
+        [Parameter(Mandatory = $false, Position = 0)] [ValidateSet("All","Legacy","STS","LTS")] [string]$BuildTarget = "All",
         [Parameter(Mandatory = $false, Position = 1)] [string]$BuildFolder = "Build",
         [Parameter(Mandatory = $false, Position = 2)] [string]$CertificateFriendlyName = "PowerShell",
         [Parameter(Mandatory = $false, Position = 3)] [string]$CLI = "dotnet.exe",
@@ -200,9 +201,8 @@ function Build-SADScriptoFormExecutable
     if (Get-Command -Name $CLI -ErrorAction SilentlyContinue)
     {
         $Frameworks = @([PSCustomObject]@{Name = "Legacy";Version = "net48";Enabled=$false},
-                        [PSCustomObject]@{Name = "LTS-Legacy";Version = "net8.0-windows";Enabled=$false},
-                        [PSCustomObject]@{Name = "STS";Version = "net9.0-windows";Enabled=$false},
-                        [PSCustomObject]@{Name = "LTS";Version = "net10.0-windows";Enabled=$false})
+                        [PSCustomObject]@{Name = "LTS";Version = "net10.0-windows";Enabled=$false},
+                        [PSCustomObject]@{Name = "STS";Version = "net11.0-windows";Enabled=$false})
     
         if ($BuildTarget -eq "All")
         {

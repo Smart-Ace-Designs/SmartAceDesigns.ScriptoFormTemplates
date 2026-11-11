@@ -9,7 +9,7 @@ Generated on: 01/01/2023
 
 @{
 RootModule = 'SmartAceDesigns.ScriptoFormTemplates.psm1'
-ModuleVersion = '2026.7.1'
+ModuleVersion = '2026.11.0'
 CompatiblePSEditions = @('Desktop','Core')
 PowerShellVersion = '5.1'
 GUID = '99d484e4-d391-4b7e-a45d-1adcfbc2da5b'
@@ -31,6 +31,19 @@ PrivateData = @{
         LicenseUri = 'https://github.com/Smart-Ace-Designs/SmartAceDesigns.ScriptoFormTemplates/blob/main/LICENSE'
         
         ReleaseNotes = @'
+2026.11.0 - November 2026 Release
+- Adds support for PowerShell 7.7
+- Adds support for MSIX in compiled executables and bumps version
+- Enhances meta data for compiled executables
+- Removes support for PowerShell 7.4 (End of support: November 10, 2026)
+- Removes support for PowerShell 7.5 (End of support: November 10, 2026)
+- Adds support for Microsoft .NET 11
+- Removes support for Microsoft .NET 8 (End of support: November 10, 2026)
+- Removes support for Microsoft .NET 9 (End of support: November 10, 2026)
+- Updates minimum Plaster 2 patch version
+- Consolidates duplicate template files to a shared common location
+- Fixes a typo in the template README file
+
 2026.7.1 - September 2026 Maintenance Release
 - Converts PowerShell related files from LF to CRLF
 - Cleans up Plaster 2 manifest file
@@ -108,14 +121,14 @@ PrivateData = @{
         Extensions = @(
             @{
                 Module = 'Plaster'
-                MinimumVersion = '2.1.3'
+                MinimumVersion = '2.1.5'
                 Details = @{TemplatePaths = @('$PSScriptRoot\Templates\Allman', '$PSScriptRoot\Templates\OTB')}
              }
         )
     }
 }
 
-RequiredModules = @(@{ModuleName = 'Plaster';ModuleVersion = '2.1.3'})
+RequiredModules = @(@{ModuleName = 'Plaster';ModuleVersion = '2.1.5'})
 
 FunctionsToExport = @('New-SADScriptoFormProject','Build-SADScriptoFormExecutable')
 CmdletsToExport = '*'
